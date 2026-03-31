@@ -52,7 +52,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     
     <!-- Lenis Smooth Scroll -->
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
     
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -805,10 +805,10 @@
         const originalTexts = new Map();
 
         // Initialize Lucide icons
-        lucide.createIcons();
+        try { lucide.createIcons(); } catch(e) { console.error('Lucide failed:', e); }
         
         // Initialize smooth scroll
-        const lenis = new Lenis({
+        try { const lenis = new Lenis({
             duration: 1.2,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         });
@@ -820,8 +820,11 @@
         requestAnimationFrame(raf);
         
         // Register GSAP plugins
-        gsap.registerPlugin(ScrollTrigger);
+        } catch(e) { console.error('Lenis failed:', e); }
+        try { gsap.registerPlugin(ScrollTrigger);
         
+        } catch(e) { console.error('GSAP failed:', e); }
+
         // Language toggle functionality
         function initLanguageToggle() {
             const langToggle = document.getElementById('lang-toggle');
@@ -944,7 +947,7 @@
             } else {
                 icon.setAttribute('data-lucide', 'x');
             }
-            lucide.createIcons();
+            try { lucide.createIcons(); } catch(e) { console.error('Lucide failed:', e); }
         });
         
         // Scroll to top function
@@ -1011,7 +1014,7 @@
         });
         
         // Initialize language toggle immediately (script is at bottom, DOM is ready)
-        initLanguageToggle();
+        try { initLanguageToggle(); } catch(e) { console.error('Lang toggle init failed:', e); }
     </script>
 </body>
 </html>
