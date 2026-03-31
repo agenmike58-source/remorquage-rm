@@ -1,1020 +1,1193 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remorquage R.M. Inc. - Service de remorquage 24/7 à Montréal | Dépannage routier</title>
-    <meta name="description" content="Service de remorquage 24/7 à Montréal et région. Dépannage routier, assistance routière, remorquage plateau. Arrivée en 30 minutes. Appelez maintenant: (866) 487-9969">
-    <meta name="keywords" content="remorquage, towing, dépannage, assistance routière, 24/7, Montréal, plateau, survoltage, pneu">
-    <meta name="geo.region" content="CA-QC">
-    <meta name="geo.placename" content="Montréal">
-    <meta name="geo.position" content="45.5017;-73.5673">
-    <meta name="ICBM" content="45.5017, -73.5673">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Remorquage R.M. Inc. - Service 24/7 Montréal">
-    <meta property="og:description" content="Service de remorquage d'urgence 24/7. Arrivée en 30 minutes ou moins. Assistance routière professionnelle.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://remorquagerm.ca">
-    <meta property="og:image" content="https://remorquagerm.ca/images/photo_hero.png">
-    <meta property="og:locale" content="fr_CA">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Remorquage R.M. Inc. - Service 24/7">
-    <meta name="twitter:description" content="Service de remorquage d'urgence 24/7 à Montréal. Arrivée garantie en 30 minutes.">
-    <meta name="twitter:image" content="https://remorquagerm.ca/images/photo_hero.png">
+    <title>Remorquage R.M. inc. - Service de remorquage 24/7 à Montréal</title>
+    <meta name="description" content="Service de remorquage professionnel 24/7 à Montréal et région. Remorquage à plateau, assistance routière, survoltage. Appelez maintenant (866) 487-9969">
     
     <!-- Icons -->
-    <link rel="icon" href="images/favicon.ico">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Config -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        emergency: '#DC2626',
-                        'dark-charcoal': '#1A1A1A',
+                        'rm-red': '#dc2626',
+                        'rm-gold': '#fbbf24',
+                        'rm-dark': '#111827'
+                    },
+                    fontFamily: {
+                        'sans': ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
                     }
                 }
             }
         }
     </script>
     
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     
-    <!-- Lenis Smooth Scroll -->
+    <!-- Lenis -->
     <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
     
-    <!-- Schema.org -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": ["LocalBusiness", "TowingService"],
-        "name": "Remorquage R.M. Inc.",
-        "description": "Service de remorquage et assistance routière 24/7 à Montréal",
-        "telephone": "+1-866-487-9969",
-        "email": "info@remorquagerm.ca",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1234 Boulevard Saint-Laurent",
-            "addressLocality": "Montréal",
-            "addressRegion": "QC",
-            "postalCode": "H2X 2T3",
-            "addressCountry": "CA"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 45.5017,
-            "longitude": -73.5673
-        },
-        "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
-        "serviceArea": {
-            "@type": "GeoCircle",
-            "geoMidpoint": {
-                "@type": "GeoCoordinates",
-                "latitude": 45.5017,
-                "longitude": -73.5673
-            },
-            "geoRadius": "50000"
-        },
-        "services": ["Remorquage", "Assistance routière", "Dépannage", "Survoltage", "Changement de pneu"]
-    }
-    </script>
-    
-    <style>
-        @keyframes pulse-red {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
-            50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(220, 38, 38, 0); }
-        }
-        .pulse-red { animation: pulse-red 2s infinite; }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        .float { animation: float 3s ease-in-out infinite; }
-        
-        .hero-bg {
-            background-image: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.5)), url('images/photo_hero.png');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .night-bg {
-            background-image: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.6)), url('images/photo_night.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-        
-        .sticky-phone {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-            animation: pulse-red 2s infinite;
-        }
-    </style>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
-
-<body class="bg-dark-charcoal text-white overflow-x-hidden">
+<body class="font-sans antialiased">
     
-    <!-- Sticky Phone Button -->
-    <a href="tel:+18664879969" class="sticky-phone bg-emergency text-white p-4 rounded-full shadow-xl md:hidden">
-        <i data-lucide="phone" class="w-6 h-6"></i>
-    </a>
-    
-    <!-- Header -->
-    <header id="header" class="fixed top-0 w-full z-50 bg-gray-900/95 backdrop-blur">
-        <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
-            <div class="flex items-center space-x-3 cursor-pointer" onclick="scrollToTop()">
-                <img src="images/logo.png" alt="Remorquage R.M." class="h-16 w-auto" id="logo">
-                <div class="hidden sm:block">
-                    <h1 class="text-lg font-bold text-white">Remorquage R.M.</h1>
-                    <p class="text-emergency text-xs font-medium">Service 24/7</p>
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="images/logo.png" alt="Remorquage R.M. inc." class="h-20 w-auto">
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-white hover:text-rm-gold transition-colors duration-300" data-text="Services">Services</a>
+                    <a href="#fleet" class="text-white hover:text-rm-gold transition-colors duration-300" data-text="Flotte">Flotte</a>
+                    <a href="#zone" class="text-white hover:text-rm-gold transition-colors duration-300" data-text="Zone">Zone</a>
+                    <a href="#about" class="text-white hover:text-rm-gold transition-colors duration-300" data-text="À propos">À propos</a>
+                    <a href="#contact" class="text-white hover:text-rm-gold transition-colors duration-300" data-text="Contact">Contact</a>
+                </div>
+                
+                <!-- Right Side -->
+                <div class="flex items-center space-x-4">
+                    <!-- Language Toggle -->
+                    <button id="lang-toggle" class="px-3 py-1 rounded border border-gray-600 text-white hover:bg-gray-700 transition-colors duration-300">
+                        <span id="lang-text">EN</span>
+                    </button>
+                    
+                    <!-- Phone Button -->
+                    <a href="tel:+18664879969" class="bg-rm-red hover:bg-red-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-300 flex items-center space-x-2">
+                        <span data-text="Call Now">Appelez</span>
+                        <span class="hidden sm:inline">(866) 487-9969</span>
+                    </a>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden text-white p-2">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
                 </div>
             </div>
-
-            <div class="flex items-center space-x-4">
-                <!-- Language Toggle -->
-                <button id="lang-toggle" class="flex items-center space-x-2 bg-emergency text-white px-3 py-2 rounded-lg hover:bg-red-700 transition-all">
-                    <i data-lucide="globe" class="w-4 h-4"></i>
-                    <span id="lang-text">EN</span>
-                </button>
-                
-                <!-- Phone Number -->
-                <a href="tel:+18664879969" class="hidden md:flex items-center space-x-2 bg-emergency text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-all pulse-red">
-                    <i data-lucide="phone" class="w-5 h-5"></i>
-                    <span class="text-xl font-bold">(866) 487-9969</span>
-                </a>
-                
-                <!-- Mobile Menu -->
-                <button class="md:hidden text-white" id="mobile-menu-btn">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
-            </div>
-        </nav>
+        </div>
         
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden bg-gray-900 border-t border-emergency hidden">
-            <div class="p-4 space-y-3">
-                <button id="mobile-lang-toggle" class="flex items-center space-x-2 bg-emergency text-white px-3 py-2 rounded-lg hover:bg-red-700 transition-all w-full justify-center">
-                    <i data-lucide="globe" class="w-4 h-4"></i>
-                    <span id="mobile-lang-text">EN</span>
-                </button>
-                <a href="tel:+18664879969" class="block w-full bg-emergency text-white text-center py-4 rounded-lg text-xl font-bold pulse-red">
-                    <i data-lucide="phone" class="inline w-5 h-5 mr-2"></i>
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-900 border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#services" class="block px-3 py-2 text-white hover:text-rm-gold" data-text="Services">Services</a>
+                <a href="#fleet" class="block px-3 py-2 text-white hover:text-rm-gold" data-text="Flotte">Flotte</a>
+                <a href="#zone" class="block px-3 py-2 text-white hover:text-rm-gold" data-text="Zone">Zone</a>
+                <a href="#about" class="block px-3 py-2 text-white hover:text-rm-gold" data-text="À propos">À propos</a>
+                <a href="#contact" class="block px-3 py-2 text-white hover:text-rm-gold" data-text="Contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center bg-gray-900">
+        <div class="absolute inset-0">
+            <img src="images/photo_hero.png" alt="Remorquage professionnel" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/60"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8">
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+                <span data-text="TOWING">REMORQUAGE</span>
+                <span class="block text-rm-red text-4xl md:text-6xl mt-2" data-text="24/7">24/7</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto" data-text="Professional towing service in Montreal and surrounding areas. Available 24 hours a day, 7 days a week.">
+                Service de remorquage professionnel à Montréal et région. Disponible 24 heures sur 24, 7 jours sur 7.
+            </p>
+            
+            <div class="mb-8">
+                <a href="tel:+18664879969" class="text-3xl md:text-4xl font-bold text-white hover:text-rm-gold transition-colors duration-300">
                     (866) 487-9969
                 </a>
             </div>
-        </div>
-    </header>
-    
-    <!-- Hero Section -->
-    <section id="hero" class="hero-bg min-h-screen flex items-center justify-center relative">
-        <div class="container mx-auto px-4 text-center">
-            <!-- 24/7 Badge -->
-            <div class="inline-block bg-emergency text-white px-6 py-2 rounded-full mb-6 font-bold">
-                <span class="translate-text">OUVERT 24/7</span>
-            </div>
             
-            <!-- Main Headline -->
-            <h1 class="text-5xl md:text-7xl font-black mb-4">
-                <span class="translate-text">REMORQUAGE</span>
-                <span class="text-emergency block">24/7</span>
-            </h1>
-            
-            <!-- Subheadline -->
-            <p class="text-xl md:text-2xl mb-8 text-gray-200 translate-text">
-                Service d'urgence à Montréal et région
-            </p>
-            
-            <!-- Response Time Badge -->
-            <div class="inline-block bg-white text-dark-charcoal px-8 py-3 rounded-lg mb-8 font-bold text-lg">
-                <i data-lucide="clock" class="inline w-5 h-5 mr-2 text-emergency"></i>
-                <span class="translate-text">Arrivée en 30 minutes ou moins</span>
-            </div>
-            
-            <!-- CTA Button -->
-            <div class="mb-8">
-                <a href="tel:+18664879969" class="inline-block bg-emergency text-white px-12 py-6 rounded-lg text-2xl font-bold pulse-red hover:bg-red-700 transition-all">
-                    <span class="translate-text">APPELEZ MAINTENANT</span>
-                </a>
-            </div>
-            
-            <!-- Large Phone Number -->
-            <div class="text-4xl md:text-6xl font-black text-emergency">
-                (866) 487-9969
-            </div>
-        </div>
-        
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white float">
-            <i data-lucide="chevron-down" class="w-8 h-8"></i>
+            <a href="tel:+18664879969" class="bg-rm-red hover:bg-red-700 text-white px-8 py-4 rounded-lg text-xl font-semibold transition-colors duration-300 inline-flex items-center space-x-2">
+                <i data-lucide="phone" class="w-6 h-6"></i>
+                <span data-text="CALL NOW">APPELEZ MAINTENANT</span>
+            </a>
         </div>
     </section>
-    
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-900">
-        <div class="container mx-auto px-4">
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 translate-text">Nos Services</h2>
-                <p class="text-gray-400 translate-text">
-                    Solutions complètes de remorquage et dépannage
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6" data-text="Our Services">Nos Services</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-text="Complete towing and roadside assistance services available 24/7 throughout Montreal and surrounding areas.">
+                    Services complets de remorquage et d'assistance routière disponibles 24/7 dans tout Montréal et les environs.
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Service Card 1 -->
-                <div class="bg-dark-charcoal rounded-xl border border-emergency/20 hover:border-emergency transition-all h-full">
+                <div class="bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
                     <img src="images/photo_flatbed.png" alt="Remorquage à plateau" class="w-full h-48 object-cover rounded-t-xl">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 translate-text">Remorquage à plateau</h3>
-                        <p class="text-gray-400 translate-text">Transport sécurisé pour tous véhicules</p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" data-text="Flatbed Towing">Remorquage à plateau</h3>
+                        <p class="text-gray-600" data-text="Safe transport for luxury and damaged vehicles">Transport sécurisé pour véhicules de luxe et endommagés</p>
                     </div>
                 </div>
                 
                 <!-- Service Card 2 -->
-                <div class="bg-dark-charcoal rounded-xl border border-emergency/20 hover:border-emergency transition-all h-full">
+                <div class="bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
                     <img src="images/photo_heavy.png" alt="Remorquage lourd" class="w-full h-48 object-cover rounded-t-xl">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 translate-text">Remorquage lourd</h3>
-                        <p class="text-gray-400 translate-text">Camions, autobus et véhicules commerciaux</p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" data-text="Heavy Towing">Remorquage lourd</h3>
+                        <p class="text-gray-600" data-text="Specialized equipment for trucks and heavy vehicles">Équipement spécialisé pour camions et véhicules lourds</p>
                     </div>
                 </div>
                 
                 <!-- Service Card 3 -->
-                <div class="bg-dark-charcoal rounded-xl border border-emergency/20 hover:border-emergency transition-all h-full">
+                <div class="bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
                     <img src="images/photo_roadside.png" alt="Assistance routière" class="w-full h-48 object-cover rounded-t-xl">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 translate-text">Assistance routière</h3>
-                        <p class="text-gray-400 translate-text">Dépannage sur place</p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" data-text="Roadside Assistance">Assistance routière</h3>
+                        <p class="text-gray-600" data-text="Complete roadside emergency services">Services d'urgence routière complets</p>
                     </div>
                 </div>
                 
                 <!-- Service Card 4 -->
-                <div class="bg-dark-charcoal rounded-xl border border-emergency/20 hover:border-emergency transition-all h-full">
-                    <img src="images/photo_boost.png" alt="Survoltage/Boost" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/photo_boost.png" alt="Survoltage" class="w-full h-48 object-cover rounded-t-xl">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 translate-text">Survoltage/Boost</h3>
-                        <p class="text-gray-400 translate-text">Batterie à plat? On arrive!</p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" data-text="Jump Start/Boost">Survoltage/Boost</h3>
+                        <p class="text-gray-600" data-text="Quick battery boost service">Service de survoltage de batterie rapide</p>
                     </div>
                 </div>
                 
                 <!-- Service Card 5 -->
-                <div class="bg-dark-charcoal rounded-xl border border-emergency/20 hover:border-emergency transition-all h-full">
+                <div class="bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
                     <img src="images/photo_tire.png" alt="Changement de pneu" class="w-full h-48 object-cover rounded-t-xl">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 translate-text">Changement de pneu</h3>
-                        <p class="text-gray-400 translate-text">Service rapide et sécuritaire</p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" data-text="Tire Change">Changement de pneu</h3>
+                        <p class="text-gray-600" data-text="Professional tire changing service">Service professionnel de changement de pneu</p>
                     </div>
                 </div>
                 
                 <!-- Service Card 6 -->
-                <div class="bg-dark-charcoal rounded-xl border border-emergency/20 hover:border-emergency transition-all h-full">
+                <div class="bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
                     <img src="images/photo_lockout.png" alt="Déverrouillage" class="w-full h-48 object-cover rounded-t-xl">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 translate-text">Déverrouillage</h3>
-                        <p class="text-gray-400 translate-text">Clés oubliées dans l'auto</p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" data-text="Lockout Service">Déverrouillage</h3>
+                        <p class="text-gray-600" data-text="Fast vehicle unlock service">Service de déverrouillage de véhicule rapide</p>
                     </div>
                 </div>
                 
                 <!-- Service Card 7 -->
-                <div class="bg-dark-charcoal rounded-xl border border-emergency/20 hover:border-emergency transition-all h-full">
+                <div class="bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
                     <img src="images/photo_transport.png" alt="Transport de véhicule" class="w-full h-48 object-cover rounded-t-xl">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 translate-text">Transport de véhicule</h3>
-                        <p class="text-gray-400 translate-text">Livraison longue distance</p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" data-text="Vehicle Transport">Transport de véhicule</h3>
+                        <p class="text-gray-600" data-text="Long distance vehicle transportation">Transport de véhicules longue distance</p>
                     </div>
                 </div>
                 
                 <!-- Service Card 8 -->
-                <div class="bg-dark-charcoal rounded-xl border border-emergency/20 hover:border-emergency transition-all h-full">
+                <div class="bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
                     <img src="images/photo_ditch.png" alt="Récupération en fossé" class="w-full h-48 object-cover rounded-t-xl">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 translate-text">Récupération en fossé</h3>
-                        <p class="text-gray-400 translate-text">Sortie de véhicules enlisés</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Fleet Section -->
-    <section id="fleet" class="py-20 bg-dark-charcoal">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 translate-text">Notre Flotte</h2>
-                <p class="text-gray-400 translate-text">
-                    Équipement moderne et bien entretenu
-                </p>
-            </div>
-            
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-8">
-                    <img src="images/photo_team.png" alt="Équipe Remorquage R.M." class="rounded-lg shadow-lg w-full">
-                </div>
-                
-                <div class="space-y-8">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="text-center p-6 bg-gray-900 rounded-lg h-full">
-                            <div class="text-3xl font-bold text-emergency mb-2">12</div>
-                            <div class="text-gray-400 translate-text">Camions</div>
-                        </div>
-                        <div class="text-center p-6 bg-gray-900 rounded-lg h-full">
-                            <div class="text-3xl font-bold text-emergency mb-2">18</div>
-                            <div class="text-gray-400 translate-text">Min moy.</div>
-                        </div>
-                        <div class="text-center p-6 bg-gray-900 rounded-lg h-full">
-                            <div class="text-3xl font-bold text-emergency mb-2">50</div>
-                            <div class="text-gray-400 translate-text">Km rayon</div>
-                        </div>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <h3 class="text-2xl font-bold translate-text">On arrive vite</h3>
-                        <p class="text-gray-400 translate-text">
-                            Notre flotte moderne assure des interventions rapides 24/7. Équipement spécialisé pour tous types de véhicules.
-                        </p>
-                        <a href="tel:+18664879969" class="inline-block bg-emergency text-white px-8 py-3 rounded-lg font-bold hover:bg-red-700 transition-all">
-                            <span class="translate-text">Demander service</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Coverage/Map Section -->
-    <section id="coverage" class="py-20 bg-gray-900">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 translate-text">Zone de Service</h2>
-                <p class="text-gray-400 translate-text">
-                    Montréal et région métropolitaine
-                </p>
-            </div>
-            
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Map -->
-                <div class="bg-dark-charcoal rounded-lg p-8">
-                    <iframe 
-                        src="https://www.openstreetmap.org/export/embed.html?bbox=-74.1%2C45.2%2C-73.1%2C45.8&layer=mapnik&marker=45.5017%2C-73.5673"
-                        width="100%" 
-                        height="400" 
-                        class="rounded-lg border-2 border-emergency/20"
-                        frameborder="0"
-                        scrolling="no">
-                    </iframe>
-                </div>
-                
-                <!-- Zones -->
-                <div class="space-y-6">
-                    <h3 class="text-2xl font-bold translate-text">Zones couvertes</h3>
-                    <div class="grid gap-4">
-                        <div class="p-4 bg-dark-charcoal rounded-lg">
-                            <h4 class="font-bold text-emergency">Montréal</h4>
-                            <p class="text-sm text-gray-400 translate-text">Centre-ville et arrondissements</p>
-                        </div>
-                        <div class="p-4 bg-dark-charcoal rounded-lg">
-                            <h4 class="font-bold text-emergency">Rive-Nord</h4>
-                            <p class="text-sm text-gray-400 translate-text">Laval et environs</p>
-                        </div>
-                        <div class="p-4 bg-dark-charcoal rounded-lg">
-                            <h4 class="font-bold text-emergency">Rive-Sud</h4>
-                            <p class="text-sm text-gray-400 translate-text">Longueuil et banlieues</p>
-                        </div>
-                        <div class="p-4 bg-dark-charcoal rounded-lg">
-                            <h4 class="font-bold text-emergency">Couronnes</h4>
-                            <p class="text-sm text-gray-400 translate-text">Banlieues éloignées</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 bg-dark-charcoal">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 translate-text">Ce que disent nos clients</h2>
-                <p class="text-gray-400 translate-text">
-                    Service de qualité reconnu
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-gray-900 p-6 rounded-lg h-full">
-                    <div class="flex text-emergency mb-4">
-                        <span class="text-yellow-400 text-xl">★★★★★</span>
-                    </div>
-                    <p class="text-gray-300 mb-4 translate-text">
-                        Arrivés en 15 minutes sur l'A-40. Service professionnel et prix correct.
-                    </p>
-                    <div class="text-sm">
-                        <strong>Marie Tremblay</strong>
-                        <span class="text-gray-400">- Laval</span>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-900 p-6 rounded-lg h-full">
-                    <div class="flex text-emergency mb-4">
-                        <span class="text-yellow-400 text-xl">★★★★★</span>
-                    </div>
-                    <p class="text-gray-300 mb-4 translate-text">
-                        Mon camion est tombé en panne à 2h du matin. Ils étaient là rapidement!
-                    </p>
-                    <div class="text-sm">
-                        <strong>Jean-Luc Dubois</strong>
-                        <span class="text-gray-400">- Montréal</span>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-900 p-6 rounded-lg h-full">
-                    <div class="flex text-emergency mb-4">
-                        <span class="text-yellow-400 text-xl">★★★★★</span>
-                    </div>
-                    <p class="text-gray-300 mb-4 translate-text">
-                        Excellent service! Ils ont sorti ma voiture du fossé sans dommage.
-                    </p>
-                    <div class="text-sm">
-                        <strong>Sophie Gagnon</strong>
-                        <span class="text-gray-400">- Longueuil</span>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-900 p-6 rounded-lg h-full">
-                    <div class="flex text-emergency mb-4">
-                        <span class="text-yellow-400 text-xl">★★★★★</span>
-                    </div>
-                    <p class="text-gray-300 mb-4 translate-text">
-                        Batterie morte par -30°C. Ils m'ont fait redémarrer sur place.
-                    </p>
-                    <div class="text-sm">
-                        <strong>Pierre Laflamme</strong>
-                        <span class="text-gray-400">- Brossard</span>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" data-text="Ditch Recovery">Récupération en fossé</h3>
+                        <p class="text-gray-600" data-text="Specialized recovery from ditches and difficult terrain">Récupération spécialisée des fossés et terrains difficiles</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Night Parallax Section -->
-    <section class="night-bg py-32 relative">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-5xl font-black mb-6 translate-text">Jour et nuit, on répond.</h2>
-            <p class="text-2xl text-gray-200 mb-8 translate-text">Urgence 24/7 — Pluie, neige ou verglas.</p>
-            <a href="tel:+18664879969" class="inline-block bg-emergency text-white px-12 py-6 rounded-lg text-2xl font-bold pulse-red hover:bg-red-700 transition-all">
-                <span class="translate-text">APPELEZ MAINTENANT</span>
-            </a>
-        </div>
-    </section>
-    
-    <!-- Impound Lot Section -->
-    <section id="fourriere" class="py-20 bg-gray-900">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 translate-text">Fourrière Automobile</h2>
-                <p class="text-gray-400 translate-text">
-                    Récupération de véhicules saisis
-                </p>
-            </div>
-            
-            <div class="grid lg:grid-cols-2 gap-12">
-                <div class="bg-dark-charcoal p-8 rounded-lg h-full">
-                    <h3 class="text-2xl font-bold mb-6 translate-text">Heures d'ouverture</h3>
-                    <div class="space-y-3 mb-8">
-                        <div class="flex justify-between">
-                            <span class="translate-text">Lundi - Vendredi</span>
-                            <span>8h00 - 17h00</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="translate-text">Samedi</span>
-                            <span>9h00 - 15h00</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="translate-text">Dimanche</span>
-                            <span class="translate-text">Fermé</span>
-                        </div>
-                        <div class="flex justify-between border-t border-emergency pt-3 mt-4">
-                            <span class="text-emergency font-bold translate-text">Urgences</span>
-                            <span class="text-emergency font-bold">24/7</span>
-                        </div>
-                    </div>
+    <!-- FLEET SECTION -->
+    <section id="fleet" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-8" data-text="Our Fleet">Notre Flotte</h2>
+                    <p class="text-lg text-gray-300 mb-12" data-text="With over 50 years of experience and a modern fleet of 15+ specialized tow trucks, we're equipped to handle any situation within a 100km radius of Montreal.">
+                        Avec plus de 50 ans d'expérience et une flotte moderne de 15+ camions de remorquage spécialisés, nous sommes équipés pour gérer toute situation dans un rayon de 100 km de Montréal.
+                    </p>
                     
-                    <div class="bg-emergency/10 p-6 rounded-lg">
-                        <h4 class="font-bold mb-3 translate-text">Information importante</h4>
-                        <ul class="space-y-2 text-sm text-gray-300">
-                            <li class="translate-text">• Frais de remorquage et entreposage selon tarif SAAQ</li>
-                            <li class="translate-text">• Paiement comptant, débit ou carte de crédit accepté</li>
-                            <li class="translate-text">• Véhicules non réclamés vendus aux enchères après 30 jours</li>
-                        </ul>
+                    <div class="grid grid-cols-4 gap-6">
+                        <div class="text-center bg-white/5 rounded-xl p-4">
+                            <div class="text-5xl font-bold text-rm-gold mb-1">50+</div>
+                            <div class="text-gray-300 text-sm translate-text" data-text="Years of experience">ans d'expérience</div>
+                        </div>
+                        <div class="text-center bg-white/5 rounded-xl p-4">
+                            <div class="text-5xl font-bold text-rm-gold mb-1">15+</div>
+                            <div class="text-gray-300 text-sm translate-text" data-text="Specialized trucks">camions spécialisés</div>
+                        </div>
+                        <div class="text-center bg-white/5 rounded-xl p-4">
+                            <div class="text-5xl font-bold text-rm-gold mb-1">30</div>
+                            <div class="text-gray-300 text-sm translate-text" data-text="Min. response time">min. temps de réponse</div>
+                        </div>
+                        <div class="text-center bg-white/5 rounded-xl p-4">
+                            <div class="text-5xl font-bold text-rm-gold mb-1">100</div>
+                            <div class="text-gray-300 text-sm translate-text" data-text="Km service radius">km rayon de service</div>
+                        </div>
                     </div>
                 </div>
                 
+                <div>
+                    <img src="images/photo_heavy.png" alt="Flotte de remorquage" class="w-full rounded-xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ZONE DE SERVICE -->
+    <section id="zone" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6" data-text="Service Zone">Zone de Service</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-text="We serve Montreal and all surrounding areas with fast, reliable towing and roadside assistance.">
+                    Nous desservons Montréal et toutes les régions avoisinantes avec un service de remorquage et d'assistance routière rapide et fiable.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <!-- Service Area Visual -->
+                <div class="relative bg-gray-100 rounded-xl overflow-hidden shadow-lg">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d180000!2d-73.5673!3d45.5017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sca"
+                        class="w-full h-96"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <!-- Service radius overlay -->
+                    <div class="absolute inset-0 pointer-events-none flex items-center justify-center">
+                        <div class="w-72 h-72 border-4 border-red-500/40 rounded-full bg-red-500/10 flex items-center justify-center">
+                            <div class="text-center bg-white/90 rounded-lg px-4 py-2 shadow-lg pointer-events-auto">
+                                <div class="text-2xl font-bold text-rm-red">100 km</div>
+                                <div class="text-sm text-gray-600 translate-text" data-text="Coverage radius">Rayon de couverture</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service Areas -->
                 <div class="space-y-6">
-                    <div class="bg-dark-charcoal p-6 rounded-lg h-full">
-                        <h4 class="text-xl font-bold mb-4 translate-text">Documents requis</h4>
-                        <ul class="space-y-3">
-                            <li class="flex items-center">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-emergency mr-3"></i>
-                                <span class="translate-text">Certificat d'immatriculation</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-emergency mr-3"></i>
-                                <span class="translate-text">Permis de conduire valide</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-emergency mr-3"></i>
-                                <span class="translate-text">Numéro d'événement police</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-emergency mr-3"></i>
-                                <span class="translate-text">Preuve d'assurance</span>
-                            </li>
-                        </ul>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-rm-red rounded-full flex items-center justify-center">
+                            <i data-lucide="check" class="w-5 h-5 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900" data-text="Montreal Center">Montréal centre</h3>
+                            <p class="text-gray-600" data-text="Downtown and central areas">Centre-ville et secteurs centraux</p>
+                        </div>
                     </div>
                     
-                    <a href="tel:+18664879969" class="block w-full bg-emergency text-white text-center py-4 rounded-lg font-bold hover:bg-red-700 transition-all">
-                        <span class="translate-text">Appelez pour info fourrière</span>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-rm-red rounded-full flex items-center justify-center">
+                            <i data-lucide="check" class="w-5 h-5 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900" data-text="North Shore/Laval">Rive-Nord/Laval</h3>
+                            <p class="text-gray-600" data-text="Laval, Terrebonne, Repentigny and area">Laval, Terrebonne, Repentigny et environs</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-rm-red rounded-full flex items-center justify-center">
+                            <i data-lucide="check" class="w-5 h-5 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900" data-text="South Shore/Longueuil">Rive-Sud/Longueuil</h3>
+                            <p class="text-gray-600" data-text="Longueuil, Brossard, Saint-Hubert and area">Longueuil, Brossard, Saint-Hubert et environs</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-rm-red rounded-full flex items-center justify-center">
+                            <i data-lucide="check" class="w-5 h-5 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900" data-text="Surrounding Areas">Couronnes</h3>
+                            <p class="text-gray-600" data-text="All surrounding metropolitan areas">Toutes les régions métropolitaines avoisinantes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6" data-text="What Our Clients Say">Ce que disent nos clients</h2>
+                <p class="text-lg text-gray-300 max-w-3xl mx-auto" data-text="Thousands of satisfied customers throughout Montreal and surrounding areas trust us for their towing needs.">
+                    Des milliers de clients satisfaits dans tout Montréal et les environs nous font confiance pour leurs besoins de remorquage.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white/10 backdrop-blur rounded-xl p-6">
+                    <div class="flex mb-4">
+                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/>
+                        </svg>
+                    </div>
+                    <p class="text-white mb-4" data-text="Excellent service! They arrived within 20 minutes and handled my car with great care. Professional and courteous.">
+                        "Service excellent! Ils sont arrivés en moins de 20 minutes et ont traité ma voiture avec grand soin. Professionnels et courtois."
+                    </p>
+                    <p class="text-gray-300 font-semibold" data-text="- Marie Tremblay">- Marie Tremblay</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white/10 backdrop-blur rounded-xl p-6">
+                    <div class="flex mb-4">
+                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/>
+                        </svg>
+                    </div>
+                    <p class="text-white mb-4" data-text="Called them at 2 AM after an accident. They were there quickly and took care of everything. Highly recommend!">
+                        "Je les ai appelés à 2h du matin après un accident. Ils étaient là rapidement et ont tout pris en charge. Je recommande fortement!"
+                    </p>
+                    <p class="text-gray-300 font-semibold" data-text="- Jean Dubois">- Jean Dubois</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white/10 backdrop-blur rounded-xl p-6">
+                    <div class="flex mb-4">
+                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/>
+                        </svg>
+                    </div>
+                    <p class="text-white mb-4" data-text="Fair prices and honest service. They didn't try to overcharge me like other companies. Very satisfied!">
+                        "Prix équitables et service honnête. Ils n'ont pas essayé de me surcharger comme d'autres compagnies. Très satisfait!"
+                    </p>
+                    <p class="text-gray-300 font-semibold" data-text="- Pierre Lavoie">- Pierre Lavoie</p>
+                </div>
+                
+                <!-- Testimonial 4 -->
+                <div class="bg-white/10 backdrop-blur rounded-xl p-6">
+                    <div class="flex mb-4">
+                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/>
+                        </svg>
+                    </div>
+                    <p class="text-white mb-4" data-text="Professional equipment and experienced drivers. They safely transported my luxury car without a scratch.">
+                        "Équipement professionnel et chauffeurs expérimentés. Ils ont transporté ma voiture de luxe en toute sécurité sans une égratignure."
+                    </p>
+                    <p class="text-gray-300 font-semibold" data-text="- Sophie Gagnon">- Sophie Gagnon</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NIGHT PARALLAX -->
+    <section id="night-parallax" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="images/photo_night.png" alt="Service de nuit" class="w-full h-full object-cover parallax-bg">
+            <div class="absolute inset-0 bg-black/70"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-6xl font-bold text-white mb-8" data-text="Day and night, we answer.">
+                Jour et nuit, on répond.
+            </h2>
+            <p class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto" data-text="24/7 Emergency — Rain, snow or ice.">
+                Urgence 24/7 — Pluie, neige ou verglas.
+            </p>
+        </div>
+    </section>
+
+    <!-- FOURRIÈRE -->
+    <section id="fourriere" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6" data-text="Impound Lot">Fourrière</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-text="Secure impound lot with flexible recovery hours and professional staff.">
+                    Fourrière sécurisée avec heures de récupération flexibles et personnel professionnel.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg border">
+                    <div class="w-12 h-12 bg-rm-red rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="clock" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4" data-text="Operating Hours">Heures d'opération</h3>
+                    <p class="text-gray-600 mb-4" data-text="Monday to Friday: 8:00 AM - 6:00 PM">Lundi au vendredi: 8h00 - 18h00</p>
+                    <p class="text-gray-600" data-text="Saturday: 9:00 AM - 4:00 PM">Samedi: 9h00 - 16h00</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg border">
+                    <div class="w-12 h-12 bg-rm-red rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4" data-text="Secure Storage">Entreposage sécurisé</h3>
+                    <p class="text-gray-600" data-text="24/7 surveillance, fully fenced lot with security systems for your peace of mind.">
+                        Surveillance 24/7, terrain entièrement clôturé avec systèmes de sécurité pour votre tranquillité d'esprit.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg border">
+                    <div class="w-12 h-12 bg-rm-red rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="file-text" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4" data-text="Recovery Process">Processus de récupération</h3>
+                    <p class="text-gray-600" data-text="Simple paperwork, multiple payment methods accepted. Call us for details.">
+                        Paperasse simple, plusieurs méthodes de paiement acceptées. Appelez-nous pour les détails.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="tel:+18664879969" class="bg-rm-red hover:bg-red-700 text-white px-8 py-4 rounded-lg text-xl font-semibold transition-colors duration-300 inline-flex items-center space-x-2">
+                    <i data-lucide="phone" class="w-6 h-6"></i>
+                    <span data-text="Call for Vehicle Recovery">(866) 487-9969 - Récupération</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="images/photo_team.png" alt="Équipe Remorquage R.M." class="w-full rounded-xl shadow-2xl">
+                </div>
+                
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-8" data-text="About Us">À propos de nous</h2>
+                    <p class="text-lg text-gray-300 mb-6" data-text="For over 50 years, Remorquage R.M. inc. has been Montreal's trusted towing and roadside assistance company. Our experienced team operates 24/7 with modern equipment and professional service.">
+                        Depuis plus de 50 ans, Remorquage R.M. inc. est la compagnie de remorquage et d'assistance routière de confiance de Montréal. Notre équipe expérimentée opère 24/7 avec de l'équipement moderne et un service professionnel.
+                    </p>
+                    <p class="text-lg text-gray-300 mb-8" data-text="We pride ourselves on fast response times, fair pricing, and treating every customer's vehicle as if it were our own.">
+                        Nous sommes fiers de nos temps de réponse rapides, de nos prix équitables et de traiter le véhicule de chaque client comme s'il était le nôtre.
+                    </p>
+                    
+                    <div class="grid grid-cols-3 gap-8 mb-8">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-rm-gold mb-2">50+</div>
+                            <div class="text-gray-300" data-text="Years Experience">Années d'expérience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-rm-gold mb-2">24/7</div>
+                            <div class="text-gray-300" data-text="Available">Disponible</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-rm-gold mb-2">100%</div>
+                            <div class="text-gray-300" data-text="Satisfaction">Satisfaction</div>
+                        </div>
+                    </div>
+                    
+                    <a href="tel:+18664879969" class="bg-rm-red hover:bg-red-700 text-white px-8 py-4 rounded-lg text-xl font-semibold transition-colors duration-300 inline-flex items-center space-x-2">
+                        <i data-lucide="phone" class="w-6 h-6"></i>
+                        <span>(866) 487-9969</span>
                     </a>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-dark-charcoal">
-        <div class="container mx-auto px-4">
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 translate-text">Contactez-nous</h2>
-                <p class="text-gray-400 translate-text">
-                    Besoin d'aide? On est là 24/7
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6" data-text="Contact Us">Contactez-nous</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-text="Need immediate towing or roadside assistance? Call us now or send us a message.">
+                    Besoin de remorquage ou d'assistance routière immédiate? Appelez-nous maintenant ou envoyez-nous un message.
                 </p>
             </div>
             
-            <div class="grid lg:grid-cols-2 gap-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <!-- Contact Info -->
                 <div class="space-y-8">
                     <div class="text-center lg:text-left">
-                        <a href="tel:+18664879969" class="inline-block bg-emergency text-white px-12 py-6 rounded-lg text-4xl font-bold pulse-red hover:bg-red-700 transition-all mb-4">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4" data-text="Emergency Line">Ligne d'urgence</h3>
+                        <a href="tel:+18664879969" class="text-4xl font-bold text-rm-red hover:text-red-700 transition-colors duration-300">
                             (866) 487-9969
                         </a>
-                        <p class="text-gray-400 translate-text">
-                            Appelez maintenant pour service immédiat
-                        </p>
                     </div>
                     
-                    <div class="grid gap-6">
-                        <div class="flex items-center p-4 bg-gray-900 rounded-lg">
-                            <i data-lucide="map-pin" class="w-6 h-6 text-emergency mr-4"></i>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-rm-red rounded-full flex items-center justify-center">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-white"></i>
+                            </div>
                             <div>
-                                <h4 class="font-bold translate-text">Adresse</h4>
-                                <p class="text-gray-400">1234 Boulevard Saint-Laurent<br>Montréal, QC H2X 2T3</p>
+                                <h4 class="text-lg font-semibold text-gray-900" data-text="Address">Adresse</h4>
+                                <p class="text-gray-600" data-text="Montreal, Quebec">Montréal, Québec</p>
+                                <p class="text-gray-600" data-text="Serving all of Greater Montreal">Desservant tout le Grand Montréal</p>
                             </div>
                         </div>
                         
-                        <div class="flex items-center p-4 bg-gray-900 rounded-lg">
-                            <i data-lucide="mail" class="w-6 h-6 text-emergency mr-4"></i>
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-rm-red rounded-full flex items-center justify-center">
+                                <i data-lucide="mail" class="w-4 h-4 text-white"></i>
+                            </div>
                             <div>
-                                <h4 class="font-bold">Email</h4>
-                                <a href="mailto:info@remorquagerm.ca" class="text-emergency hover:text-red-400">info@remorquagerm.ca</a>
+                                <h4 class="text-lg font-semibold text-gray-900" data-text="Email">Courriel</h4>
+                                <a href="mailto:info@remorquagerm.ca" class="text-rm-red hover:text-red-700 transition-colors duration-300">
+                                    info@remorquagerm.ca
+                                </a>
                             </div>
                         </div>
                         
-                        <div class="flex items-center p-4 bg-gray-900 rounded-lg">
-                            <i data-lucide="clock" class="w-6 h-6 text-emergency mr-4"></i>
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-rm-red rounded-full flex items-center justify-center">
+                                <i data-lucide="clock" class="w-4 h-4 text-white"></i>
+                            </div>
                             <div>
-                                <h4 class="font-bold translate-text">Heures</h4>
-                                <p class="text-emergency font-bold translate-text">24/7 - 365 jours</p>
+                                <h4 class="text-lg font-semibold text-gray-900" data-text="Hours">Heures</h4>
+                                <p class="text-gray-600" data-text="24 hours a day, 7 days a week">24 heures par jour, 7 jours par semaine</p>
+                                <p class="text-gray-600" data-text="Emergency service always available">Service d'urgence toujours disponible</p>
                             </div>
                         </div>
+                    </div>
+                    
+                    <!-- Small Map -->
+                    <div class="bg-gray-100 rounded-xl overflow-hidden shadow-lg">
+                        <iframe 
+                            src="https://www.openstreetmap.org/export/embed.html?bbox=-73.7%2C45.4%2C-73.4%2C45.6&layer=mapnik&marker=45.5017%2C-73.5673"
+                            class="w-full h-48"
+                            frameborder="0"
+                            scrolling="no"
+                            marginheight="0"
+                            marginwidth="0">
+                        </iframe>
                     </div>
                 </div>
                 
                 <!-- Contact Form -->
-                <div class="bg-gray-900 p-8 rounded-lg h-full">
-                    <h3 class="text-2xl font-bold mb-6 translate-text">Demander un devis</h3>
-                    <form class="space-y-4">
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <input type="text" placeholder="Nom complet" class="bg-gray-800 text-white p-3 rounded border border-gray-700 focus:border-emergency outline-none">
-                            <input type="tel" placeholder="Téléphone" class="bg-gray-800 text-white p-3 rounded border border-gray-700 focus:border-emergency outline-none">
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6" data-text="Send us a message">Envoyez-nous un message</h3>
+                    <form class="space-y-6" id="contact-form">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2" data-text="Full Name">Nom complet</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rm-red focus:border-rm-red" required>
                         </div>
-                        <input type="email" placeholder="Email" class="w-full bg-gray-800 text-white p-3 rounded border border-gray-700 focus:border-emergency outline-none">
-                        <select class="w-full bg-gray-800 text-white p-3 rounded border border-gray-700 focus:border-emergency outline-none" id="service-select">
-                            <option value="">Type de service</option>
-                            <option value="plateau">Remorquage plateau</option>
-                            <option value="lourd">Remorquage lourd</option>
-                            <option value="assistance">Assistance routière</option>
-                            <option value="transport">Transport véhicule</option>
-                        </select>
-                        <textarea placeholder="Détails de votre situation" rows="4" class="w-full bg-gray-800 text-white p-3 rounded border border-gray-700 focus:border-emergency outline-none"></textarea>
-                        <button type="submit" class="w-full bg-emergency text-white py-3 rounded font-bold hover:bg-red-700 transition-all">
-                            <span class="translate-text">Envoyer la demande</span>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2" data-text="Phone Number">Numéro de téléphone</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rm-red focus:border-rm-red" required>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2" data-text="Email">Courriel</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rm-red focus:border-rm-red" required>
+                        </div>
+                        
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-gray-700 mb-2" data-text="Service Needed">Service requis</label>
+                            <select id="service" name="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rm-red focus:border-rm-red" required>
+                                <option value="" data-text="Select a service">Choisir un service</option>
+                                <option value="flatbed" data-text="Flatbed Towing">Remorquage à plateau</option>
+                                <option value="heavy" data-text="Heavy Towing">Remorquage lourd</option>
+                                <option value="roadside" data-text="Roadside Assistance">Assistance routière</option>
+                                <option value="boost" data-text="Jump Start/Boost">Survoltage/Boost</option>
+                                <option value="tire" data-text="Tire Change">Changement de pneu</option>
+                                <option value="lockout" data-text="Lockout Service">Déverrouillage</option>
+                                <option value="transport" data-text="Vehicle Transport">Transport de véhicule</option>
+                                <option value="recovery" data-text="Ditch Recovery">Récupération en fossé</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2" data-text="Message">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rm-red focus:border-rm-red" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-rm-red hover:bg-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300 flex items-center justify-center space-x-2">
+                            <i data-lucide="send" class="w-5 h-5"></i>
+                            <span data-text="Send Message">Envoyer le message</span>
                         </button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Footer -->
-    <footer class="bg-dark-charcoal py-16 border-t border-emergency/20">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Company Info -->
-                <div class="md:col-span-2">
-                    <div class="flex items-center space-x-3 mb-6 cursor-pointer" onclick="scrollToTop()">
-                        <img src="images/logo.png" alt="Remorquage R.M." class="h-12 w-auto">
-                        <div>
-                            <h3 class="text-xl font-bold">Remorquage R.M. Inc.</h3>
-                            <p class="text-emergency text-sm font-medium translate-text">Service 24/7</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 mb-6 translate-text">
-                        Votre partenaire de confiance pour tous vos besoins de remorquage et d'assistance routière dans la région de Montréal.
+                <div class="space-y-4">
+                    <img src="images/logo.png" alt="Remorquage R.M. inc." class="h-20 w-auto">
+                    <p class="text-gray-300" data-text="Montreal's trusted towing and roadside assistance company for over 50 years. Available 24/7 for all your emergency needs.">
+                        Compagnie de remorquage et d'assistance routière de confiance de Montréal depuis plus de 50 ans. Disponible 24/7 pour tous vos besoins d'urgence.
                     </p>
-                    
-                    <!-- Social Links -->
                     <div class="flex space-x-4">
-                        <a href="#" class="bg-gray-800 p-2 rounded hover:bg-emergency transition-all">
-                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i data-lucide="facebook" class="w-6 h-6"></i>
                         </a>
-                        <a href="#" class="bg-gray-800 p-2 rounded hover:bg-emergency transition-all">
-                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
                         </a>
-                        <a href="#" class="bg-gray-800 p-2 rounded hover:bg-emergency transition-all">
-                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i data-lucide="twitter" class="w-6 h-6"></i>
                         </a>
                     </div>
                 </div>
                 
                 <!-- Services -->
-                <div>
-                    <h4 class="text-lg font-bold mb-4 translate-text">Services</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#services" class="hover:text-white translate-text">Remorquage plateau</a></li>
-                        <li><a href="#services" class="hover:text-white translate-text">Remorquage lourd</a></li>
-                        <li><a href="#services" class="hover:text-white translate-text">Assistance routière</a></li>
-                        <li><a href="#services" class="hover:text-white translate-text">Transport véhicule</a></li>
-                        <li><a href="#fourriere" class="hover:text-white translate-text">Fourrière</a></li>
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold" data-text="Services">Services</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#services" class="hover:text-white transition-colors duration-300" data-text="Flatbed Towing">Remorquage à plateau</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors duration-300" data-text="Heavy Towing">Remorquage lourd</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors duration-300" data-text="Roadside Assistance">Assistance routière</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors duration-300" data-text="Jump Start/Boost">Survoltage/Boost</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors duration-300" data-text="Tire Change">Changement de pneu</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors duration-300" data-text="Vehicle Transport">Transport de véhicule</a></li>
                     </ul>
                 </div>
                 
-                <!-- Contact -->
-                <div>
-                    <h4 class="text-lg font-bold mb-4 translate-text">Contact</h4>
-                    <ul class="space-y-3 text-gray-400">
-                        <li>
-                            <a href="tel:+18664879969" class="text-emergency font-bold text-lg hover:text-red-400">
-                                (866) 487-9969
-                            </a>
-                        </li>
-                        <li>
-                            <a href="mailto:info@remorquagerm.ca" class="hover:text-white">
-                                info@remorquagerm.ca
-                            </a>
-                        </li>
-                        <li class="text-sm">
-                            1234 Boulevard Saint-Laurent<br>
-                            Montréal, QC H2X 2T3
-                        </li>
-                    </ul>
-                    
-                    <!-- APDQ Badge -->
-                    <div class="mt-6 p-3 bg-gray-800 rounded text-center">
-                        <div class="text-emergency font-bold text-sm">MEMBRE APDQ</div>
-                        <div class="text-xs text-gray-400 translate-text">Association Professionnelle</div>
+                <!-- Contact Info -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold" data-text="Contact">Contact</h3>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <div class="flex items-center space-x-2">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            <a href="tel:+18664879969" class="hover:text-white transition-colors duration-300">(866) 487-9969</a>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            <a href="mailto:info@remorquagerm.ca" class="hover:text-white transition-colors duration-300">info@remorquagerm.ca</a>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i data-lucide="globe" class="w-4 h-4"></i>
+                            <span>remorquagerm.ca</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            <span data-text="Montreal & Region">Montréal & Région</span>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Bottom Bar -->
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <div class="text-gray-400 text-sm mb-4 md:mb-0">
-                    <span class="translate-text">
-                        © 2024 Remorquage R.M. Inc. Tous droits réservés.
-                    </span>
-                </div>
-                <div class="flex space-x-6 text-sm text-gray-400">
-                    <a href="#" class="hover:text-white translate-text">Politique de confidentialité</a>
-                    <a href="#" class="hover:text-white translate-text">Conditions d'utilisation</a>
-                    <a href="#" class="hover:text-white translate-text">Plan du site</a>
+            <div class="border-t border-gray-800 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-sm text-gray-400" data-text="© 2024 Remorquage R.M. inc. All rights reserved.">
+                        © 2024 Remorquage R.M. inc. Tous droits réservés.
+                    </p>
+                    <p class="text-sm text-gray-400 mt-2 md:mt-0" data-text="Licensed towing operator in Quebec">
+                        Opérateur de remorquage licencié au Québec
+                    </p>
                 </div>
             </div>
         </div>
     </footer>
-    
+
+    <!-- GSAP Animation Scripts -->
     <script>
-        // Translation data
-        const translations = {
-            'OUVERT 24/7': 'OPEN 24/7',
-            'REMORQUAGE': 'TOWING',
-            'Service d\'urgence à Montréal et région': 'Emergency service in Montreal and surrounding areas',
-            'Arrivée en 30 minutes ou moins': 'Arrival in 30 minutes or less',
-            'APPELEZ MAINTENANT': 'CALL NOW',
-            'Nos Services': 'Our Services',
-            'Solutions complètes de remorquage et dépannage': 'Complete towing and roadside assistance solutions',
-            'Remorquage à plateau': 'Flatbed Towing',
-            'Transport sécurisé pour tous véhicules': 'Safe transport for all vehicles',
-            'Remorquage lourd': 'Heavy Duty Towing',
-            'Camions, autobus et véhicules commerciaux': 'Trucks, buses and commercial vehicles',
-            'Assistance routière': 'Roadside Assistance',
-            'Dépannage sur place': 'On-site repair service',
-            'Survoltage/Boost': 'Jump Start',
-            'Batterie à plat? On arrive!': 'Dead battery? We\'re coming!',
-            'Changement de pneu': 'Tire Change',
-            'Service rapide et sécuritaire': 'Fast and safe service',
-            'Déverrouillage': 'Lockout Service',
-            'Clés oubliées dans l\'auto': 'Keys locked in car',
-            'Transport de véhicule': 'Vehicle Transport',
-            'Livraison longue distance': 'Long distance delivery',
-            'Récupération en fossé': 'Ditch Recovery',
-            'Sortie de véhicules enlisés': 'Recovery of stuck vehicles',
-            'Notre Flotte': 'Our Fleet',
-            'Équipement moderne et bien entretenu': 'Modern and well-maintained equipment',
-            'Camions': 'Trucks',
-            'Min moy.': 'Avg min',
-            'Km rayon': 'Km radius',
-            'On arrive vite': 'We arrive fast',
-            'Notre flotte moderne assure des interventions rapides 24/7. Équipement spécialisé pour tous types de véhicules.': 'Our modern fleet ensures fast 24/7 interventions. Specialized equipment for all vehicle types.',
-            'Demander service': 'Request service',
-            'Zone de Service': 'Service Area',
-            'Montréal et région métropolitaine': 'Montreal and metropolitan area',
-            'Zones couvertes': 'Covered Areas',
-            'Centre-ville et arrondissements': 'Downtown and boroughs',
-            'Laval et environs': 'Laval and surrounding areas',
-            'Longueuil et banlieues': 'Longueuil and suburbs',
-            'Banlieues éloignées': 'Outer suburbs',
-            'Ce que disent nos clients': 'What our customers say',
-            'Service de qualité reconnu': 'Recognized quality service',
-            'Arrivés en 15 minutes sur l\'A-40. Service professionnel et prix correct.': 'Arrived in 15 minutes on A-40. Professional service and fair price.',
-            'Mon camion est tombé en panne à 2h du matin. Ils étaient là rapidement!': 'My truck broke down at 2am. They were there quickly!',
-            'Excellent service! Ils ont sorti ma voiture du fossé sans dommage.': 'Excellent service! They got my car out of the ditch without damage.',
-            'Batterie morte par -30°C. Ils m\'ont fait redémarrer sur place.': 'Dead battery at -30°C. They got me started on the spot.',
-            'Jour et nuit, on répond.': 'Day and night, we respond.',
-            'Urgence 24/7 — Pluie, neige ou verglas.': '24/7 Emergency — Rain, snow or ice.',
-            'Fourrière Automobile': 'Impound Lot',
-            'Récupération de véhicules saisis': 'Recovery of seized vehicles',
-            'Heures d\'ouverture': 'Opening Hours',
-            'Lundi - Vendredi': 'Monday - Friday',
-            'Samedi': 'Saturday',
-            'Dimanche': 'Sunday',
-            'Fermé': 'Closed',
-            'Urgences': 'Emergencies',
-            'Information importante': 'Important information',
-            '• Frais de remorquage et entreposage selon tarif SAAQ': '• Towing and storage fees according to SAAQ rates',
-            '• Paiement comptant, débit ou carte de crédit accepté': '• Cash, debit or credit card payment accepted',
-            '• Véhicules non réclamés vendus aux enchères après 30 jours': '• Unclaimed vehicles auctioned after 30 days',
-            'Documents requis': 'Required documents',
-            'Certificat d\'immatriculation': 'Registration certificate',
-            'Permis de conduire valide': 'Valid driver\'s license',
-            'Numéro d\'événement police': 'Police event number',
-            'Preuve d\'assurance': 'Proof of insurance',
-            'Appelez pour info fourrière': 'Call for impound info',
-            'Contactez-nous': 'Contact Us',
-            'Besoin d\'aide? On est là 24/7': 'Need help? We\'re here 24/7',
-            'Appelez maintenant pour service immédiat': 'Call now for immediate service',
-            'Adresse': 'Address',
-            'Heures': 'Hours',
-            '24/7 - 365 jours': '24/7 - 365 days',
-            'Demander un devis': 'Request a quote',
-            'Envoyer la demande': 'Send request',
-            'Service 24/7': '24/7 Service',
-            'Votre partenaire de confiance pour tous vos besoins de remorquage et d\'assistance routière dans la région de Montréal.': 'Your trusted partner for all your towing and roadside assistance needs in the Montreal area.',
-            'Services': 'Services',
-            'Contact': 'Contact',
-            'Association Professionnelle': 'Professional Association',
-            '© 2024 Remorquage R.M. Inc. Tous droits réservés.': '© 2024 R.M. Towing Inc. All rights reserved.',
-            'Politique de confidentialité': 'Privacy policy',
-            'Conditions d\'utilisation': 'Terms of use',
-            'Plan du site': 'Site map'
-        };
-
-        let currentLang = 'fr';
-        const originalTexts = new Map();
-
-        // Initialize Lucide icons
-        try { lucide.createIcons(); } catch(e) { console.error('Lucide failed:', e); }
-        
-        // Initialize smooth scroll
-        try { const lenis = new Lenis({
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        });
-        
-        function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
-        requestAnimationFrame(raf);
-        
-        // Register GSAP plugins
-        } catch(e) { console.error('Lenis failed:', e); }
-        try { gsap.registerPlugin(ScrollTrigger);
-        
-        } catch(e) { console.error('GSAP failed:', e); }
-
-        // Language toggle functionality
-        function initLanguageToggle() {
-            const langToggle = document.getElementById('lang-toggle');
-            const mobileLangToggle = document.getElementById('mobile-lang-toggle');
-            const langText = document.getElementById('lang-text');
-            const mobileLangText = document.getElementById('mobile-lang-text');
-            
-            // Store original texts on page load
-            document.querySelectorAll('.translate-text').forEach(el => {
-                originalTexts.set(el, el.textContent);
+        try {
+            // Initialize Lenis for smooth scrolling
+            const lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                orientation: 'vertical',
+                gestureOrientation: 'vertical',
+                smoothWheel: true,
+                wheelMultiplier: 1,
+                touchMultiplier: 2,
             });
-            
-            function toggleLanguage() {
-                currentLang = currentLang === 'fr' ? 'en' : 'fr';
-                
-                // Update button text
-                langText.textContent = currentLang === 'fr' ? 'EN' : 'FR';
-                mobileLangText.textContent = currentLang === 'fr' ? 'EN' : 'FR';
-                
-                // Update all translatable elements
-                document.querySelectorAll('.translate-text').forEach(el => {
-                    const originalText = originalTexts.get(el);
-                    if (currentLang === 'en' && translations[originalText]) {
-                        el.textContent = translations[originalText];
-                    } else {
-                        el.textContent = originalText;
-                    }
-                });
-                
-                // Update form placeholders
-                const nameInput = document.querySelector('input[placeholder="Nom complet"]');
-                const phoneInput = document.querySelector('input[placeholder="Téléphone"]');
-                const emailInput = document.querySelector('input[placeholder="Email"]');
-                const messageTextarea = document.querySelector('textarea[placeholder="Détails de votre situation"]');
-                const serviceSelect = document.getElementById('service-select');
-                
-                if (nameInput) nameInput.placeholder = currentLang === 'en' ? 'Full name' : 'Nom complet';
-                if (phoneInput) phoneInput.placeholder = currentLang === 'en' ? 'Phone' : 'Téléphone';
-                if (emailInput) emailInput.placeholder = currentLang === 'en' ? 'Email' : 'Email';
-                if (messageTextarea) messageTextarea.placeholder = currentLang === 'en' ? 'Details of your situation' : 'Détails de votre situation';
-                
-                if (serviceSelect) {
-                    const options = serviceSelect.querySelectorAll('option');
-                    if (currentLang === 'en') {
-                        options[0].textContent = 'Service type';
-                        options[1].textContent = 'Flatbed towing';
-                        options[2].textContent = 'Heavy duty towing';
-                        options[3].textContent = 'Roadside assistance';
-                        options[4].textContent = 'Vehicle transport';
-                    } else {
-                        options[0].textContent = 'Type de service';
-                        options[1].textContent = 'Remorquage plateau';
-                        options[2].textContent = 'Remorquage lourd';
-                        options[3].textContent = 'Assistance routière';
-                        options[4].textContent = 'Transport véhicule';
-                    }
-                }
-                
-                // Update page title and meta
-                if (currentLang === 'en') {
-                    document.title = "R.M. Towing Inc. - 24/7 Towing Service in Montreal | Roadside Assistance";
-                    document.querySelector('meta[name="description"]').content = "24/7 towing service in Montreal and region. Roadside assistance, flatbed towing. Arrival in 30 minutes. Call now: (866) 487-9969";
-                } else {
-                    document.title = "Remorquage R.M. Inc. - Service de remorquage 24/7 à Montréal | Dépannage routier";
-                    document.querySelector('meta[name="description"]').content = "Service de remorquage 24/7 à Montréal et région. Dépannage routier, assistance routière, remorquage plateau. Arrivée en 30 minutes. Appelez maintenant: (866) 487-9969";
-                }
-                
-                document.documentElement.lang = currentLang;
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
             }
-            
-            langToggle.addEventListener('click', toggleLanguage);
-            mobileLangToggle.addEventListener('click', toggleLanguage);
-        }
-        
-        // Header shrink on scroll
-        const header = document.getElementById('header');
-        const logo = document.getElementById('logo');
-        
-        ScrollTrigger.create({
-            trigger: "#services",
-            start: "top center",
-            onEnter: () => {
-                gsap.to(logo, { duration: 0.3, height: "2rem" });
-                gsap.to(header, { duration: 0.3, padding: "0.5rem 0" });
-            },
-            onLeaveBack: () => {
-                gsap.to(logo, { duration: 0.3, height: "4rem" });
-                gsap.to(header, { duration: 0.3, padding: "0.75rem 0" });
-            }
-        });
-        
-        // Animate sections on scroll
-        gsap.utils.toArray("section").forEach(section => {
-            gsap.fromTo(section.querySelectorAll("h2, h3, .bg-dark-charcoal, .bg-gray-900"), 
-                { y: 50, opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.8,
+            requestAnimationFrame(raf);
+
+            // GSAP Animations
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Hero animation
+            gsap.fromTo("#hero h1", 
+                { opacity: 0, y: 50 },
+                { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" }
+            );
+
+            gsap.fromTo("#hero p", 
+                { opacity: 0, y: 30 },
+                { opacity: 1, y: 0, duration: 1, delay: 0.3, ease: "power3.out" }
+            );
+
+            gsap.fromTo("#hero a", 
+                { opacity: 0, y: 30 },
+                { opacity: 1, y: 0, duration: 1, delay: 0.6, ease: "power3.out" }
+            );
+
+            // Service cards animation
+            gsap.fromTo("#services .grid > div", 
+                { opacity: 0, y: 50 },
+                { 
+                    opacity: 1, 
+                    y: 0, 
+                    duration: 0.8, 
                     stagger: 0.1,
-                    ease: "power2.out",
+                    ease: "power3.out",
                     scrollTrigger: {
-                        trigger: section,
+                        trigger: "#services",
                         start: "top 80%",
+                        end: "bottom 20%",
                         toggleActions: "play none none reverse"
                     }
                 }
             );
-        });
-        
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            const icon = mobileMenuBtn.querySelector('i');
-            if (mobileMenu.classList.contains('hidden')) {
-                icon.setAttribute('data-lucide', 'menu');
-            } else {
-                icon.setAttribute('data-lucide', 'x');
-            }
-            try { lucide.createIcons(); } catch(e) { console.error('Lucide failed:', e); }
-        });
-        
-        // Scroll to top function
-        function scrollToTop() {
-            lenis.scrollTo(0);
-        }
-        
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    lenis.scrollTo(target);
+
+            // Fleet stats animation
+            document.querySelectorAll("#fleet .text-5xl").forEach(el => {
+                const original = el.textContent;
+                const num = parseInt(original.replace(/\+/g, ''));
+                const suffix = original.includes('+') ? '+' : '';
+                
+                gsap.from(el, {
+                    textContent: 0,
+                    duration: 2,
+                    snap: { textContent: 1 },
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: "#fleet",
+                        start: "top 70%",
+                        toggleActions: "play none none none"
+                    },
+                    onUpdate: function() {
+                        el.textContent = Math.round(parseFloat(el.textContent)) + suffix;
+                    }
+                });
+            });
+
+            // Testimonial cards animation
+            gsap.fromTo("#testimonials .grid > div", 
+                { opacity: 0, scale: 0.9 },
+                { 
+                    opacity: 1, 
+                    scale: 1, 
+                    duration: 0.8, 
+                    stagger: 0.2,
+                    ease: "back.out(1.7)",
+                    scrollTrigger: {
+                        trigger: "#testimonials",
+                        start: "top 80%",
+                        end: "bottom 20%",
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+
+            // Parallax effect for night section
+            gsap.to("#night-parallax .parallax-bg", {
+                yPercent: -50,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#night-parallax",
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true
                 }
             });
+
+            // Contact form animation
+            gsap.fromTo("#contact-form > *", 
+                { opacity: 0, x: -30 },
+                { 
+                    opacity: 1, 
+                    x: 0, 
+                    duration: 0.6, 
+                    stagger: 0.1,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: "#contact",
+                        start: "top 80%",
+                        end: "bottom 20%",
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+
+        } catch (error) {
+            console.log('Animation libraries failed to load:', error);
+        }
+    </script>
+
+    <!-- Icons Initialization -->
+    <script>
+        try {
+            lucide.createIcons();
+        } catch (error) {
+            console.log('Lucide icons failed to load:', error);
+        }
+    </script>
+
+    <!-- Mobile Menu -->
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
         });
-        
-        // Form submission
-        const contactForm = document.querySelector('form');
-        contactForm.addEventListener('submit', function(e) {
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+
+    <!-- Contact Form -->
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Simple form validation and submission simulation
-            alert(currentLang === 'fr' ? 
-                'Merci! Nous vous contacterons sous peu.' : 
-                'Thank you! We will contact you soon.'
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Create mailto link with form data
+            const subject = encodeURIComponent('Demande de service - ' + data.service);
+            const body = encodeURIComponent(
+                `Nom: ${data.name}\n` +
+                `Téléphone: ${data.phone}\n` +
+                `Service: ${data.service}\n\n` +
+                `Message:\n${data.message}`
             );
             
+            window.location.href = `mailto:info@remorquagerm.ca?subject=${subject}&body=${body}`;
+            
+            // Reset form
             this.reset();
+            
+            // Show success message
+            alert(currentLang === 'fr' ? 'Merci! Votre message a été préparé.' : 'Thank you! Your message has been prepared.');
         });
+    </script>
+
+    <!-- Language Toggle (Separate Script) -->
+    <script>
+        let currentLang = 'fr';
+        const originalTexts = new Map();
         
-        // Parallax effect for night section
-        gsap.to(".night-bg", {
-            yPercent: -30,
-            ease: "none",
-            scrollTrigger: {
-                trigger: ".night-bg",
-                start: "top bottom",
-                end: "bottom top",
-                scrub: true
+        const translations = {
+            // Navigation
+            'Services': 'Services',
+            'Flotte': 'Fleet',
+            'Zone': 'Zone',
+            'À propos': 'About',
+            'Contact': 'Contact',
+            'Appelez': 'Call',
+            'Call Now': 'Appelez',
+            
+            // Hero
+            'REMORQUAGE': 'TOWING',
+            'TOWING': 'REMORQUAGE',
+            '24/7': '24/7',
+            'Service de remorquage professionnel à Montréal et région. Disponible 24 heures sur 24, 7 jours sur 7.': 'Professional towing service in Montreal and surrounding areas. Available 24 hours a day, 7 days a week.',
+            'Professional towing service in Montreal and surrounding areas. Available 24 hours a day, 7 days a week.': 'Service de remorquage professionnel à Montréal et région. Disponible 24 heures sur 24, 7 jours sur 7.',
+            'APPELEZ MAINTENANT': 'CALL NOW',
+            'CALL NOW': 'APPELEZ MAINTENANT',
+            
+            // Services
+            'Nos Services': 'Our Services',
+            'Our Services': 'Nos Services',
+            'Services complets de remorquage et d\'assistance routière disponibles 24/7 dans tout Montréal et les environs.': 'Complete towing and roadside assistance services available 24/7 throughout Montreal and surrounding areas.',
+            'Complete towing and roadside assistance services available 24/7 throughout Montreal and surrounding areas.': 'Services complets de remorquage et d\'assistance routière disponibles 24/7 dans tout Montréal et les environs.',
+            
+            // Service cards
+            'Remorquage à plateau': 'Flatbed Towing',
+            'Flatbed Towing': 'Remorquage à plateau',
+            'Transport sécurisé pour véhicules de luxe et endommagés': 'Safe transport for luxury and damaged vehicles',
+            'Safe transport for luxury and damaged vehicles': 'Transport sécurisé pour véhicules de luxe et endommagés',
+            
+            'Remorquage lourd': 'Heavy Towing',
+            'Heavy Towing': 'Remorquage lourd',
+            'Équipement spécialisé pour camions et véhicules lourds': 'Specialized equipment for trucks and heavy vehicles',
+            'Specialized equipment for trucks and heavy vehicles': 'Équipement spécialisé pour camions et véhicules lourds',
+            
+            'Assistance routière': 'Roadside Assistance',
+            'Roadside Assistance': 'Assistance routière',
+            'Services d\'urgence routière complets': 'Complete roadside emergency services',
+            'Complete roadside emergency services': 'Services d\'urgence routière complets',
+            
+            'Survoltage/Boost': 'Jump Start/Boost',
+            'Jump Start/Boost': 'Survoltage/Boost',
+            'Service de survoltage de batterie rapide': 'Quick battery boost service',
+            'Quick battery boost service': 'Service de survoltage de batterie rapide',
+            
+            'Changement de pneu': 'Tire Change',
+            'Tire Change': 'Changement de pneu',
+            'Service professionnel de changement de pneu': 'Professional tire changing service',
+            'Professional tire changing service': 'Service professionnel de changement de pneu',
+            
+            'Déverrouillage': 'Lockout Service',
+            'Lockout Service': 'Déverrouillage',
+            'Service de déverrouillage de véhicule rapide': 'Fast vehicle unlock service',
+            'Fast vehicle unlock service': 'Service de déverrouillage de véhicule rapide',
+            
+            'Transport de véhicule': 'Vehicle Transport',
+            'Vehicle Transport': 'Transport de véhicule',
+            'Transport de véhicules longue distance': 'Long distance vehicle transportation',
+            'Long distance vehicle transportation': 'Transport de véhicules longue distance',
+            
+            'Récupération en fossé': 'Ditch Recovery',
+            'Ditch Recovery': 'Récupération en fossé',
+            'Récupération spécialisée des fossés et terrains difficiles': 'Specialized recovery from ditches and difficult terrain',
+            'Specialized recovery from ditches and difficult terrain': 'Récupération spécialisée des fossés et terrains difficiles',
+            
+            // Fleet
+            'Notre Flotte': 'Our Fleet',
+            'Our Fleet': 'Notre Flotte',
+            'Avec plus de 50 ans d\'expérience et une flotte moderne de 15+ camions de remorquage spécialisés, nous sommes équipés pour gérer toute situation dans un rayon de 100 km de Montréal.': 'With over 50 years of experience and a modern fleet of 15+ specialized tow trucks, we\'re equipped to handle any situation within a 100km radius of Montreal.',
+            'With over 50 years of experience and a modern fleet of 15+ specialized tow trucks, we\'re equipped to handle any situation within a 100km radius of Montreal.': 'Avec plus de 50 ans d\'expérience et une flotte moderne de 15+ camions de remorquage spécialisés, nous sommes équipés pour gérer toute situation dans un rayon de 100 km de Montréal.',
+            'ans': 'Years',
+            'Years': 'ans',
+            'camions': 'Trucks',
+            'Trucks': 'camions',
+            'min': 'min',
+            'km': 'km',
+            
+            // Zone
+            'Zone de Service': 'Service Zone',
+            'Service Zone': 'Zone de Service',
+            'Nous desservons Montréal et toutes les régions avoisinantes avec un service de remorquage et d\'assistance routière rapide et fiable.': 'We serve Montreal and all surrounding areas with fast, reliable towing and roadside assistance.',
+            'We serve Montreal and all surrounding areas with fast, reliable towing and roadside assistance.': 'Nous desservons Montréal et toutes les régions avoisinantes avec un service de remorquage et d\'assistance routière rapide et fiable.',
+            
+            // Zone areas
+            'Montréal centre': 'Montreal Center',
+            'Montreal Center': 'Montréal centre',
+            'Centre-ville et secteurs centraux': 'Downtown and central areas',
+            'Downtown and central areas': 'Centre-ville et secteurs centraux',
+            
+            'Rive-Nord/Laval': 'North Shore/Laval',
+            'North Shore/Laval': 'Rive-Nord/Laval',
+            'Laval, Terrebonne, Repentigny et environs': 'Laval, Terrebonne, Repentigny and area',
+            'Laval, Terrebonne, Repentigny and area': 'Laval, Terrebonne, Repentigny et environs',
+            
+            'Rive-Sud/Longueuil': 'South Shore/Longueuil',
+            'South Shore/Longueuil': 'Rive-Sud/Longueuil',
+            'Longueuil, Brossard, Saint-Hubert et environs': 'Longueuil, Brossard, Saint-Hubert and area',
+            'Longueuil, Brossard, Saint-Hubert and area': 'Longueuil, Brossard, Saint-Hubert et environs',
+            
+            'Couronnes': 'Surrounding Areas',
+            'Surrounding Areas': 'Couronnes',
+            'Toutes les régions métropolitaines avoisinantes': 'All surrounding metropolitan areas',
+            'All surrounding metropolitan areas': 'Toutes les régions métropolitaines avoisinantes',
+            
+            // Testimonials
+            'Ce que disent nos clients': 'What Our Clients Say',
+            'What Our Clients Say': 'Ce que disent nos clients',
+            'Des milliers de clients satisfaits dans tout Montréal et les environs nous font confiance pour leurs besoins de remorquage.': 'Thousands of satisfied customers throughout Montreal and surrounding areas trust us for their towing needs.',
+            'Thousands of satisfied customers throughout Montreal and surrounding areas trust us for their towing needs.': 'Des milliers de clients satisfaits dans tout Montréal et les environs nous font confiance pour leurs besoins de remorquage.',
+            
+            // Night parallax
+            'Jour et nuit, on répond.': 'Day and night, we answer.',
+            'Day and night, we answer.': 'Jour et nuit, on répond.',
+            'Urgence 24/7 — Pluie, neige ou verglas.': '24/7 Emergency — Rain, snow or ice.',
+            '24/7 Emergency — Rain, snow or ice.': 'Urgence 24/7 — Pluie, neige ou verglas.',
+            
+            // Fourrière
+            'Fourrière': 'Impound Lot',
+            'Impound Lot': 'Fourrière',
+            'Fourrière sécurisée avec heures de récupération flexibles et personnel professionnel.': 'Secure impound lot with flexible recovery hours and professional staff.',
+            'Secure impound lot with flexible recovery hours and professional staff.': 'Fourrière sécurisée avec heures de récupération flexibles et personnel professionnel.',
+            
+            'Heures d\'opération': 'Operating Hours',
+            'Operating Hours': 'Heures d\'opération',
+            'Lundi au vendredi: 8h00 - 18h00': 'Monday to Friday: 8:00 AM - 6:00 PM',
+            'Monday to Friday: 8:00 AM - 6:00 PM': 'Lundi au vendredi: 8h00 - 18h00',
+            'Samedi: 9h00 - 16h00': 'Saturday: 9:00 AM - 4:00 PM',
+            'Saturday: 9:00 AM - 4:00 PM': 'Samedi: 9h00 - 16h00',
+            
+            'Entreposage sécurisé': 'Secure Storage',
+            'Secure Storage': 'Entreposage sécurisé',
+            'Surveillance 24/7, terrain entièrement clôturé avec systèmes de sécurité pour votre tranquillité d\'esprit.': '24/7 surveillance, fully fenced lot with security systems for your peace of mind.',
+            '24/7 surveillance, fully fenced lot with security systems for your peace of mind.': 'Surveillance 24/7, terrain entièrement clôturé avec systèmes de sécurité pour votre tranquillité d\'esprit.',
+            
+            'Processus de récupération': 'Recovery Process',
+            'Recovery Process': 'Processus de récupération',
+            'Paperasse simple, plusieurs méthodes de paiement acceptées. Appelez-nous pour les détails.': 'Simple paperwork, multiple payment methods accepted. Call us for details.',
+            'Simple paperwork, multiple payment methods accepted. Call us for details.': 'Paperasse simple, plusieurs méthodes de paiement acceptées. Appelez-nous pour les détails.',
+            
+            '(866) 487-9969 - Récupération': 'Call for Vehicle Recovery',
+            'Call for Vehicle Recovery': '(866) 487-9969 - Récupération',
+            
+            // About
+            'À propos de nous': 'About Us',
+            'About Us': 'À propos de nous',
+            'Depuis plus de 50 ans, Remorquage R.M. inc. est la compagnie de remorquage et d\'assistance routière de confiance de Montréal. Notre équipe expérimentée opère 24/7 avec de l\'équipement moderne et un service professionnel.': 'For over 50 years, Remorquage R.M. inc. has been Montreal\'s trusted towing and roadside assistance company. Our experienced team operates 24/7 with modern equipment and professional service.',
+            'For over 50 years, Remorquage R.M. inc. has been Montreal\'s trusted towing and roadside assistance company. Our experienced team operates 24/7 with modern equipment and professional service.': 'Depuis plus de 50 ans, Remorquage R.M. inc. est la compagnie de remorquage et d\'assistance routière de confiance de Montréal. Notre équipe expérimentée opère 24/7 avec de l\'équipement moderne et un service professionnel.',
+            
+            'Nous sommes fiers de nos temps de réponse rapides, de nos prix équitables et de traiter le véhicule de chaque client comme s\'il était le nôtre.': 'We pride ourselves on fast response times, fair pricing, and treating every customer\'s vehicle as if it were our own.',
+            'We pride ourselves on fast response times, fair pricing, and treating every customer\'s vehicle as if it were our own.': 'Nous sommes fiers de nos temps de réponse rapides, de nos prix équitables et de traiter le véhicule de chaque client comme s\'il était le nôtre.',
+            
+            'Années d\'expérience': 'Years Experience',
+            'Years Experience': 'Années d\'expérience',
+            'Disponible': 'Available',
+            'Available': 'Disponible',
+            'Satisfaction': 'Satisfaction',
+            
+            // Contact
+            'Contactez-nous': 'Contact Us',
+            'Contact Us': 'Contactez-nous',
+            'Besoin de remorquage ou d\'assistance routière immédiate? Appelez-nous maintenant ou envoyez-nous un message.': 'Need immediate towing or roadside assistance? Call us now or send us a message.',
+            'Need immediate towing or roadside assistance? Call us now or send us a message.': 'Besoin de remorquage ou d\'assistance routière immédiate? Appelez-nous maintenant ou envoyez-nous un message.',
+            
+            'Ligne d\'urgence': 'Emergency Line',
+            'Emergency Line': 'Ligne d\'urgence',
+            'Adresse': 'Address',
+            'Address': 'Adresse',
+            'Montréal, Québec': 'Montreal, Quebec',
+            'Montreal, Quebec': 'Montréal, Québec',
+            'Desservant tout le Grand Montréal': 'Serving all of Greater Montreal',
+            'Serving all of Greater Montreal': 'Desservant tout le Grand Montréal',
+            
+            'Courriel': 'Email',
+            'Email': 'Courriel',
+            'Heures': 'Hours',
+            'Hours': 'Heures',
+            '24 heures par jour, 7 jours par semaine': '24 hours a day, 7 days a week',
+            '24 hours a day, 7 days a week': '24 heures par jour, 7 jours par semaine',
+            'Service d\'urgence toujours disponible': 'Emergency service always available',
+            'Emergency service always available': 'Service d\'urgence toujours disponible',
+            
+            // Contact Form
+            'Envoyez-nous un message': 'Send us a message',
+            'Send us a message': 'Envoyez-nous un message',
+            'Nom complet': 'Full Name',
+            'Full Name': 'Nom complet',
+            'Numéro de téléphone': 'Phone Number',
+            'Phone Number': 'Numéro de téléphone',
+            'Service requis': 'Service Needed',
+            'Service Needed': 'Service requis',
+            'Choisir un service': 'Select a service',
+            'Select a service': 'Choisir un service',
+            'Message': 'Message',
+            'Envoyer le message': 'Send Message',
+            'Send Message': 'Envoyer le message',
+            
+            // Footer
+            'Compagnie de remorquage et d\'assistance routière de confiance de Montréal depuis plus de 50 ans. Disponible 24/7 pour tous vos besoins d\'urgence.': 'Montreal\'s trusted towing and roadside assistance company for over 50 years. Available 24/7 for all your emergency needs.',
+            'Montreal\'s trusted towing and roadside assistance company for over 50 years. Available 24/7 for all your emergency needs.': 'Compagnie de remorquage et d\'assistance routière de confiance de Montréal depuis plus de 50 ans. Disponible 24/7 pour tous vos besoins d\'urgence.',
+            
+            'Montréal & Région': 'Montreal & Region',
+            'Montreal & Region': 'Montréal & Région',
+            '© 2024 Remorquage R.M. inc. Tous droits réservés.': '© 2024 Remorquage R.M. inc. All rights reserved.',
+            '© 2024 Remorquage R.M. inc. All rights reserved.': '© 2024 Remorquage R.M. inc. Tous droits réservés.',
+            'Opérateur de remorquage licencié au Québec': 'Licensed towing operator in Quebec',
+            'Licensed towing operator in Quebec': 'Opérateur de remorquage licencié au Québec'
+        };
+        
+        function storeOriginalText(element) {
+            if (!originalTexts.has(element)) {
+                originalTexts.set(element, element.textContent.trim());
+            }
+        }
+        
+        function translatePage() {
+            const elementsToTranslate = document.querySelectorAll('[data-text]');
+            
+            elementsToTranslate.forEach(element => {
+                storeOriginalText(element);
+                const currentText = element.textContent.trim();
+                const translation = translations[currentText];
+                
+                if (translation && translation !== currentText) {
+                    element.textContent = translation;
+                }
+            });
+            
+            // Update language toggle button
+            document.getElementById('lang-text').textContent = currentLang === 'fr' ? 'EN' : 'FR';
+        }
+        
+        function restoreOriginalTexts() {
+            const elementsToTranslate = document.querySelectorAll('[data-text]');
+            
+            elementsToTranslate.forEach(element => {
+                const originalText = originalTexts.get(element);
+                if (originalText) {
+                    element.textContent = originalText;
+                }
+            });
+        }
+        
+        document.getElementById('lang-toggle').addEventListener('click', function() {
+            if (currentLang === 'fr') {
+                currentLang = 'en';
+                document.documentElement.lang = 'en';
+                translatePage();
+            } else {
+                currentLang = 'fr';
+                document.documentElement.lang = 'fr';
+                restoreOriginalTexts();
+                document.getElementById('lang-text').textContent = 'EN';
             }
         });
         
-        // Stats counter animation
-        const stats = document.querySelectorAll('.text-3xl.font-bold.text-emergency');
-        stats.forEach(stat => {
-            ScrollTrigger.create({
-                trigger: stat,
-                start: "top 80%",
-                onEnter: () => {
-                    const finalValue = parseInt(stat.textContent);
-                    gsap.fromTo(stat, 
-                        { textContent: 0 },
-                        { 
-                            textContent: finalValue,
-                            duration: 2,
-                            ease: "power2.out",
-                            snap: { textContent: 1 }
-                        }
-                    );
-                }
-            });
+        // Store original texts on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            const elementsToTranslate = document.querySelectorAll('[data-text]');
+            elementsToTranslate.forEach(storeOriginalText);
         });
-        
-        // Initialize language toggle immediately (script is at bottom, DOM is ready)
-        try { initLanguageToggle(); } catch(e) { console.error('Lang toggle init failed:', e); }
     </script>
 </body>
 </html>
