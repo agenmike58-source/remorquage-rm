@@ -117,21 +117,13 @@
             animation: pulse-red 2s infinite;
         }
         
-        .lang-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
+
     </style>
 </head>
 
 <body class="bg-dark-charcoal text-white overflow-x-hidden" data-lang="fr">
     
-    <!-- Language Toggle -->
-    <button class="lang-toggle bg-emergency text-white p-2 rounded-full shadow-lg hover:bg-red-700 transition-all">
-        <i data-lucide="globe" class="w-5 h-5"></i>
-    </button>
+
     
     <!-- Sticky Phone Button -->
     <a href="tel:+(866) 487-99696" class="sticky-phone bg-emergency text-white p-4 rounded-full shadow-xl md:hidden">
@@ -153,10 +145,10 @@
             
             <div class="flex items-center space-x-4">
                 <!-- Language Toggle -->
-                <button class="flex items-center space-x-2 bg-emergency/10 text-white px-3 py-2 rounded-lg hover:bg-emergency/20 transition-all" id="lang-toggle-nav">
+                <button class="flex items-center space-x-2 bg-emergency/10 text-white px-3 py-2 rounded-lg hover:bg-emergency/20 transition-all" id="lang-toggle-nav"><span class="lang-btn-text">
                     <i data-lucide="globe" class="w-4 h-4"></i>
                     <span id="lang-text">EN</span>
-                </button>
+                </span></button>
                 
                 <!-- Phone Number -->
                 <a href="tel:+(866) 487-99696" class="hidden md:flex items-center space-x-2 bg-emergency text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-all pulse-red">
@@ -174,10 +166,10 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden bg-gray-900 border-t border-emergency hidden">
             <div class="p-4 space-y-4">
-                <button class="flex items-center space-x-2 bg-emergency/10 text-white px-3 py-2 rounded-lg hover:bg-emergency/20 transition-all w-full justify-center" id="lang-toggle-mobile">
+                <button class="flex items-center space-x-2 bg-emergency/10 text-white px-3 py-2 rounded-lg hover:bg-emergency/20 transition-all w-full justify-center" id="lang-toggle-mobile"><span class="lang-btn-text">
                     <i data-lucide="globe" class="w-4 h-4"></i>
                     <span id="lang-text-mobile">EN</span>
-                </button>
+                </span></button>
                 <a href="tel:+(866) 487-99696" class="block w-full bg-emergency text-white text-center py-4 rounded-lg text-xl font-bold pulse-red">
                     <i data-lucide="phone" class="inline w-5 h-5 mr-2"></i>
                     (866) 487-9969
@@ -934,42 +926,70 @@
             }
         };
         
+        const origTexts = new Map();
         function toggleLanguage() {
-            currentLang = currentLang === 'fr' ? 'en' : 'fr';
-            body.setAttribute('data-lang', currentLang);
+            const tr = {
+                'DISPONIBLE 24/7': 'AVAILABLE 24/7',
+                'Appelez maintenant': 'Call Now',
+                'APPELEZ MAINTENANT': 'CALL NOW',
+                'Nos services': 'Our Services',
+                'Remorquage à plateau': 'Flatbed Towing',
+                'Remorquage lourd': 'Heavy Towing',
+                'Assistance routière': 'Roadside Assistance',
+                'Survoltage/Boost': 'Jump Start',
+                'Changement de pneu': 'Tire Change',
+                'Déverrouillage': 'Lockout Service',
+                'Transport de véhicule': 'Vehicle Transport',
+                'Récupération en fossé': 'Ditch Recovery',
+                'Notre flotte': 'Our Fleet',
+                'Zone de service': 'Service Area',
+                'Témoignages': 'Testimonials',
+                'Fourrière': 'Impound Lot',
+                'À propos': 'About',
+                'Notre histoire': 'Our Story',
+                'Contact': 'Contact',
+                'Contactez-nous': 'Contact Us',
+                'Envoyer': 'Send',
+                'Nom complet': 'Full Name',
+                'Courriel': 'Email',
+                'Téléphone': 'Phone',
+                'Message': 'Message',
+                'Services': 'Services',
+                'Flotte': 'Fleet',
+                'Jour et nuit, on répond.': 'Day and night, we answer.',
+                'Tous droits réservés': 'All rights reserved',
+                'Montréal et banlieues': 'Montreal & Suburbs',
+                'Rive-Nord': 'North Shore',
+                'Rive-Sud': 'South Shore',
+                'Couronnes': 'Outer Suburbs',
+                'Arrivée en 30 minutes ou moins': 'Arrival in 30 minutes or less',
+                'On arrive.': "We're on our way.",
+                'Récupération de véhicule à la fourrière': 'Vehicle Recovery from Impound',
+            };
             
-            // Update button text
-            const buttonText = currentLang === 'fr' ? 'EN' : 'FR';
-            langTextNav.textContent = buttonText;
-            langTextMobile.textContent = buttonText;
-            
-            // Update all text elements with data attributes
-            document.querySelectorAll('[data-fr][data-en]').forEach(el => {
-                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                    el.placeholder = el.getAttribute(`data-placeholder-${currentLang}`);
-                } else {
-                    el.textContent = el.getAttribute(`data-${currentLang}`);
-                }
-            });
-
-            // Translation loop for elements without data attributes
-            const elementsToTranslate = document.querySelectorAll('h1, h2, h3, p, a, button, span');
-            elementsToTranslate.forEach(el => {
-                if (el.textContent && translations[currentLang][el.textContent.trim()]) {
-                    el.textContent = translations[currentLang][el.textContent.trim()];
-                }
-            });
-            
-            // Update page title and meta
-            if (currentLang === 'en') {
-                document.title = "R.M. Towing Inc. - 24/7 Towing Service in Montreal | Roadside Assistance";
-                document.querySelector('meta[name="description"]').content = "24/7 towing service in Montreal and region. Roadside assistance, flatbed towing. Arrival in 30 minutes. Call now: (866) 487-9969";
+            if (currentLang === 'fr') {
+                currentLang = 'en';
+                document.documentElement.lang = 'en';
+                document.querySelectorAll('h1,h2,h3,h4,p,a,button,span,label,li,th,td').forEach(el => {
+                    el.childNodes.forEach(node => {
+                        if (node.nodeType === 3) {
+                            const t = node.textContent.trim();
+                            if (tr[t]) {
+                                if (!origTexts.has(node)) origTexts.set(node, node.textContent);
+                                node.textContent = node.textContent.replace(t, tr[t]);
+                            }
+                        }
+                    });
+                });
             } else {
-                document.title = "Remorquage R.M. Inc. - Service de remorquage 24/7 à Montréal | Dépannage routier";
-                document.querySelector('meta[name="description"]').content = "Service de remorquage 24/7 à Montréal et région. Dépannage routier, assistance routière, remorquage plateau. Arrivée en 30 minutes. Appelez maintenant: (866) 487-9969";
+                currentLang = 'fr';
+                document.documentElement.lang = 'fr';
+                origTexts.forEach((orig, node) => { node.textContent = orig; });
             }
             
-            document.documentElement.lang = currentLang;
+            // Update button labels
+            const btnText = currentLang === 'fr' ? 'EN' : 'FR';
+            document.querySelectorAll('.lang-btn-text').forEach(el => el.textContent = btnText);
         }
         
         langToggleNav.addEventListener('click', toggleLanguage);
