@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Remorquage R.M. Inc. - Service de remorquage 24/7 à Montréal | Dépannage routier</title>
-    <meta name="description" content="Service de remorquage 24/7 à Montréal et région. Dépannage routier, assistance routière, remorquage plateau. Arrivée en 30 minutes. Appelez maintenant: (514) 555-REMO">
+    <meta name="description" content="Service de remorquage 24/7 à Montréal et région. Dépannage routier, assistance routière, remorquage plateau. Arrivée en 30 minutes. Appelez maintenant: (866) 487-9969">
     <meta name="keywords" content="remorquage, towing, dépannage, assistance routière, 24/7, Montréal, plateau, survoltage, pneu">
     <meta name="geo.region" content="CA-QC">
     <meta name="geo.placename" content="Montréal">
@@ -15,15 +15,15 @@
     <meta property="og:title" content="Remorquage R.M. Inc. - Service 24/7 Montréal">
     <meta property="og:description" content="Service de remorquage d'urgence 24/7. Arrivée en 30 minutes ou moins. Assistance routière professionnelle.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://remorquage-rm.ca">
-    <meta property="og:image" content="https://remorquage-rm.ca/images/photo_hero.png">
+    <meta property="og:url" content="https://remorquagerm.ca">
+    <meta property="og:image" content="https://remorquagerm.ca/images/photo_hero.png">
     <meta property="og:locale" content="fr_CA">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Remorquage R.M. Inc. - Service 24/7">
     <meta name="twitter:description" content="Service de remorquage d'urgence 24/7 à Montréal. Arrivée garantie en 30 minutes.">
-    <meta name="twitter:image" content="https://remorquage-rm.ca/images/photo_hero.png">
+    <meta name="twitter:image" content="https://remorquagerm.ca/images/photo_hero.png">
     
     <!-- Icons -->
     <link rel="icon" href="images/favicon.ico">
@@ -52,7 +52,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     
     <!-- Lenis Smooth Scroll -->
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/info@remorquagerm.ca/bundled/lenis.min.js"></script>
     
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -61,8 +61,8 @@
         "@type": ["LocalBusiness", "TowingService"],
         "name": "Remorquage R.M. Inc.",
         "description": "Service de remorquage et assistance routière 24/7 à Montréal",
-        "telephone": "+1-514-555-7366",
-        "email": "info@remorquage-rm.ca",
+        "telephone": "+1-(866) 487-9969",
+        "email": "info@remorquagerm.ca",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "1234 Boulevard Saint-Laurent",
@@ -134,39 +134,53 @@
     </button>
     
     <!-- Sticky Phone Button -->
-    <a href="tel:+15145557366" class="sticky-phone bg-emergency text-white p-4 rounded-full shadow-xl md:hidden">
+    <a href="tel:+(866) 487-99696" class="sticky-phone bg-emergency text-white p-4 rounded-full shadow-xl md:hidden">
         <i data-lucide="phone" class="w-6 h-6"></i>
     </a>
     
     <!-- Header -->
-    <header id="header" class="fixed top-0 w-full z-50 transition-all duration-300 bg-dark-charcoal/90 backdrop-blur">
+    <header id="header" class="fixed top-0 w-full z-50 transition-all duration-300 bg-gray-900/95 backdrop-blur">
         <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <img src="images/logo.png" alt="Remorquage R.M." class="h-10 w-auto transition-all duration-300" id="logo">
+                <a href="#hero" class="transition-all duration-300">
+                    <img src="images/logo.png" alt="Remorquage R.M." class="h-16 w-auto transition-all duration-300" id="logo">
+                </a>
                 <div class="hidden sm:block">
                     <h1 class="text-lg font-bold text-white" data-fr="Remorquage R.M." data-en="R.M. Towing">Remorquage R.M.</h1>
                     <p class="text-emergency text-xs font-medium" data-fr="Service 24/7" data-en="24/7 Service">Service 24/7</p>
                 </div>
             </div>
             
-            <!-- Phone Number -->
-            <a href="tel:+15145557366" class="hidden md:flex items-center space-x-2 bg-emergency text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-all pulse-red">
-                <i data-lucide="phone" class="w-5 h-5"></i>
-                <span class="text-xl font-bold">(514) 555-REMO</span>
-            </a>
-            
-            <!-- Mobile Menu -->
-            <button class="md:hidden text-white" id="mobile-menu-btn">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
+            <div class="flex items-center space-x-4">
+                <!-- Language Toggle -->
+                <button class="flex items-center space-x-2 bg-emergency/10 text-white px-3 py-2 rounded-lg hover:bg-emergency/20 transition-all" id="lang-toggle-nav">
+                    <i data-lucide="globe" class="w-4 h-4"></i>
+                    <span id="lang-text">EN</span>
+                </button>
+                
+                <!-- Phone Number -->
+                <a href="tel:+(866) 487-99696" class="hidden md:flex items-center space-x-2 bg-emergency text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-all pulse-red">
+                    <i data-lucide="phone" class="w-5 h-5"></i>
+                    <span class="text-xl font-bold">(866) 487-9969</span>
+                </a>
+                
+                <!-- Mobile Menu -->
+                <button class="md:hidden text-white" id="mobile-menu-btn">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
         </nav>
         
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden bg-dark-charcoal border-t border-emergency hidden">
-            <div class="p-4">
-                <a href="tel:+15145557366" class="block w-full bg-emergency text-white text-center py-4 rounded-lg text-xl font-bold pulse-red">
+        <div id="mobile-menu" class="md:hidden bg-gray-900 border-t border-emergency hidden">
+            <div class="p-4 space-y-4">
+                <button class="flex items-center space-x-2 bg-emergency/10 text-white px-3 py-2 rounded-lg hover:bg-emergency/20 transition-all w-full justify-center" id="lang-toggle-mobile">
+                    <i data-lucide="globe" class="w-4 h-4"></i>
+                    <span id="lang-text-mobile">EN</span>
+                </button>
+                <a href="tel:+(866) 487-99696" class="block w-full bg-emergency text-white text-center py-4 rounded-lg text-xl font-bold pulse-red">
                     <i data-lucide="phone" class="inline w-5 h-5 mr-2"></i>
-                    (514) 555-REMO
+                    (866) 487-9969
                 </a>
             </div>
         </div>
@@ -199,14 +213,14 @@
             
             <!-- CTA Button -->
             <div class="mb-8">
-                <a href="tel:+15145557366" class="inline-block bg-emergency text-white px-12 py-6 rounded-lg text-2xl font-bold pulse-red hover:bg-red-700 transition-all">
+                <a href="tel:+(866) 487-99696" class="inline-block bg-emergency text-white px-12 py-6 rounded-lg text-2xl font-bold pulse-red hover:bg-red-700 transition-all">
                     <span data-fr="APPELEZ MAINTENANT" data-en="CALL NOW">APPELEZ MAINTENANT</span>
                 </a>
             </div>
             
             <!-- Large Phone Number -->
             <div class="text-4xl md:text-6xl font-black text-emergency">
-                (514) 555-REMO
+                (866) 487-9969
             </div>
         </div>
         
@@ -229,31 +243,32 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Service Cards -->
                 <div class="bg-dark-charcoal p-6 rounded-lg border border-emergency/20 hover:border-emergency transition-all">
-                    <div class="bg-emergency/10 p-3 rounded-lg w-fit mb-4">
-                        <i data-lucide="truck" class="w-8 h-8 text-emergency"></i>
+                    <div class="mb-4">
+                        <img src="images/photo_flatbed.png" alt="Remorquage plateau" class="w-full h-32 object-cover rounded-lg mb-3">
                     </div>
                     <h3 class="text-xl font-bold mb-2" data-fr="Remorquage à plateau" data-en="Flatbed Towing">Remorquage à plateau</h3>
                     <p class="text-gray-400" data-fr="Transport sécurisé pour tous véhicules" data-en="Safe transport for all vehicles">Transport sécurisé pour tous véhicules</p>
                 </div>
                 
                 <div class="bg-dark-charcoal p-6 rounded-lg border border-emergency/20 hover:border-emergency transition-all">
-                    <div class="bg-emergency/10 p-3 rounded-lg w-fit mb-4">
-                        <i data-lucide="construction" class="w-8 h-8 text-emergency"></i>
+                    <div class="mb-4">
+                        <img src="images/photo_heavy.png" alt="Remorquage lourd" class="w-full h-32 object-cover rounded-lg mb-3">
                     </div>
                     <h3 class="text-xl font-bold mb-2" data-fr="Remorquage lourd" data-en="Heavy Duty Towing">Remorquage lourd</h3>
                     <p class="text-gray-400" data-fr="Camions, autobus et véhicules commerciaux" data-en="Trucks, buses and commercial vehicles">Camions, autobus et véhicules commerciaux</p>
                 </div>
                 
                 <div class="bg-dark-charcoal p-6 rounded-lg border border-emergency/20 hover:border-emergency transition-all">
-                    <div class="bg-emergency/10 p-3 rounded-lg w-fit mb-4">
-                        <i data-lucide="wrench" class="w-8 h-8 text-emergency"></i>
+                    <div class="mb-4">
+                        <img src="images/photo_roadside.png" alt="Assistance routière" class="w-full h-32 object-cover rounded-lg mb-3">
                     </div>
                     <h3 class="text-xl font-bold mb-2" data-fr="Assistance routière" data-en="Roadside Assistance">Assistance routière</h3>
                     <p class="text-gray-400" data-fr="Dépannage sur place" data-en="On-site repair service">Dépannage sur place</p>
                 </div>
                 
                 <div class="bg-dark-charcoal p-6 rounded-lg border border-emergency/20 hover:border-emergency transition-all">
-                    <div class="bg-emergency/10 p-3 rounded-lg w-fit mb-4">
+                    <img src="images/photo_boost.png" alt="Survoltage" class="w-full h-48 object-cover rounded-t-xl mb-4">
+                        <div class="bg-emergency/10 p-3 rounded-lg w-fit mb-4">
                         <i data-lucide="zap" class="w-8 h-8 text-emergency"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2" data-fr="Survoltage/Boost" data-en="Jump Start">Survoltage/Boost</h3>
@@ -261,7 +276,8 @@
                 </div>
                 
                 <div class="bg-dark-charcoal p-6 rounded-lg border border-emergency/20 hover:border-emergency transition-all">
-                    <div class="bg-emergency/10 p-3 rounded-lg w-fit mb-4">
+                    <img src="images/photo_tire.png" alt="Changement de pneu" class="w-full h-48 object-cover rounded-t-xl mb-4">
+                        <div class="bg-emergency/10 p-3 rounded-lg w-fit mb-4">
                         <i data-lucide="shield" class="w-8 h-8 text-emergency"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2" data-fr="Changement de pneu" data-en="Tire Change">Changement de pneu</h3>
@@ -269,7 +285,8 @@
                 </div>
                 
                 <div class="bg-dark-charcoal p-6 rounded-lg border border-emergency/20 hover:border-emergency transition-all">
-                    <div class="bg-emergency/10 p-3 rounded-lg w-fit mb-4">
+                    <img src="images/photo_lockout.png" alt="Déverrouillage" class="w-full h-48 object-cover rounded-t-xl mb-4">
+                        <div class="bg-emergency/10 p-3 rounded-lg w-fit mb-4">
                         <i data-lucide="key" class="w-8 h-8 text-emergency"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2" data-fr="Déverrouillage" data-en="Lockout Service">Déverrouillage</h3>
@@ -277,7 +294,8 @@
                 </div>
                 
                 <div class="bg-dark-charcoal p-6 rounded-lg border border-emergency/20 hover:border-emergency transition-all">
-                    <div class="bg-emergency/10 p-3 rounded-lg w-fit mb-4">
+                    <img src="images/photo_transport.png" alt="Transport de véhicule" class="w-full h-48 object-cover rounded-t-xl mb-4">
+                        <div class="bg-emergency/10 p-3 rounded-lg w-fit mb-4">
                         <i data-lucide="map-pin" class="w-8 h-8 text-emergency"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2" data-fr="Transport de véhicule" data-en="Vehicle Transport">Transport de véhicule</h3>
@@ -285,7 +303,8 @@
                 </div>
                 
                 <div class="bg-dark-charcoal p-6 rounded-lg border border-emergency/20 hover:border-emergency transition-all">
-                    <div class="bg-emergency/10 p-3 rounded-lg w-fit mb-4">
+                    <img src="images/photo_ditch.png" alt="Récupération en fossé" class="w-full h-48 object-cover rounded-t-xl mb-4">
+                        <div class="bg-emergency/10 p-3 rounded-lg w-fit mb-4">
                         <i data-lucide="triangle-alert" class="w-8 h-8 text-emergency"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2" data-fr="Récupération en fossé" data-en="Ditch Recovery">Récupération en fossé</h3>
@@ -334,7 +353,7 @@
                         <p class="text-gray-400" data-fr="Notre flotte moderne assure des interventions rapides 24/7. Équipement spécialisé pour tous types de véhicules." data-en="Our modern fleet ensures fast 24/7 interventions. Specialized equipment for all vehicle types.">
                             Notre flotte moderne assure des interventions rapides 24/7. Équipement spécialisé pour tous types de véhicules.
                         </p>
-                        <a href="tel:+15145557366" class="inline-block bg-emergency text-white px-8 py-3 rounded-lg font-bold hover:bg-red-700 transition-all">
+                        <a href="tel:+(866) 487-99696" class="inline-block bg-emergency text-white px-8 py-3 rounded-lg font-bold hover:bg-red-700 transition-all">
                             <span data-fr="Demander service" data-en="Request service">Demander service</span>
                         </a>
                     </div>
@@ -353,31 +372,41 @@
                 </p>
             </div>
             
-            <div class="bg-dark-charcoal rounded-lg p-8">
-                <iframe 
-                    src="https://www.openstreetmap.org/export/embed.html?bbox=-74.2%2C45.2%2C-72.9%2C45.8&layer=mapnik&marker=45.5017%2C-73.5673"
-                    width="100%" 
-                    height="400" 
-                    class="rounded-lg border-2 border-emergency/20"
-                    frameborder="0"
-                    scrolling="no">
-                </iframe>
-                <div class="mt-6 grid md:grid-cols-4 gap-4 text-center">
-                    <div class="p-4 bg-gray-800 rounded">
-                        <h4 class="font-bold text-emergency" data-fr="Montréal" data-en="Montreal">Montréal</h4>
-                        <p class="text-sm text-gray-400" data-fr="Centre-ville et arrondissements" data-en="Downtown and boroughs">Centre-ville et arrondissements</p>
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="bg-dark-charcoal rounded-lg p-2">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d89433.1!2d-73.5673!3d45.5017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sca"
+                        width="100%" 
+                        height="400" 
+                        class="rounded-lg"
+                        frameborder="0"
+                        allowfullscreen
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-emergency/10 p-6 rounded-lg text-center">
+                        <h3 class="text-2xl font-bold text-emergency mb-2" data-fr="Rayon de 50 km" data-en="50 km radius">Rayon de 50 km</h3>
+                        <p class="text-gray-300" data-fr="Couverture complète de la région métropolitaine" data-en="Complete metropolitan area coverage">Couverture complète de la région métropolitaine</p>
                     </div>
-                    <div class="p-4 bg-gray-800 rounded">
-                        <h4 class="font-bold text-emergency" data-fr="Laval" data-en="Laval">Laval</h4>
-                        <p class="text-sm text-gray-400" data-fr="Rive-Nord complète" data-en="Complete North Shore">Rive-Nord complète</p>
-                    </div>
-                    <div class="p-4 bg-gray-800 rounded">
-                        <h4 class="font-bold text-emergency" data-fr="Longueuil" data-en="Longueuil">Longueuil</h4>
-                        <p class="text-sm text-gray-400" data-fr="Rive-Sud et banlieues" data-en="South Shore and suburbs">Rive-Sud et banlieues</p>
-                    </div>
-                    <div class="p-4 bg-gray-800 rounded">
-                        <h4 class="font-bold text-emergency" data-fr="Autoroutes" data-en="Highways">Autoroutes</h4>
-                        <p class="text-sm text-gray-400" data-fr="A-10, A-15, A-20, A-40" data-en="A-10, A-15, A-20, A-40">A-10, A-15, A-20, A-40</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 bg-gray-800 rounded">
+                            <h4 class="font-bold text-emergency mb-2" data-fr="Montréal et banlieues" data-en="Montreal and suburbs">Montréal et banlieues</h4>
+                            <p class="text-sm text-gray-400" data-fr="Centre-ville, arrondissements" data-en="Downtown, boroughs">Centre-ville, arrondissements</p>
+                        </div>
+                        <div class="p-4 bg-gray-800 rounded">
+                            <h4 class="font-bold text-emergency mb-2" data-fr="Rive-Nord" data-en="North Shore">Rive-Nord</h4>
+                            <p class="text-sm text-gray-400" data-fr="Laval, Saint-Jérôme" data-en="Laval, Saint-Jérôme">Laval, Saint-Jérôme</p>
+                        </div>
+                        <div class="p-4 bg-gray-800 rounded">
+                            <h4 class="font-bold text-emergency mb-2" data-fr="Rive-Sud" data-en="South Shore">Rive-Sud</h4>
+                            <p class="text-sm text-gray-400" data-fr="Longueuil, Brossard" data-en="Longueuil, Brossard">Longueuil, Brossard</p>
+                        </div>
+                        <div class="p-4 bg-gray-800 rounded">
+                            <h4 class="font-bold text-emergency mb-2" data-fr="Couronnes" data-en="Outer regions">Couronnes</h4>
+                            <p class="text-sm text-gray-400" data-fr="Saint-Jean, Valleyfield" data-en="Saint-Jean, Valleyfield">Saint-Jean, Valleyfield</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -396,12 +425,12 @@
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="bg-gray-900 p-6 rounded-lg">
-                    <div class="flex text-emergency mb-4">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    <div class="flex text-yellow-400 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
                     </div>
                     <p class="text-gray-300 mb-4" data-fr="Arrivés en 15 minutes sur l'A-40. Service professionnel et prix correct." data-en="Arrived in 15 minutes on A-40. Professional service and fair price.">
                         "Arrivés en 15 minutes sur l'A-40. Service professionnel et prix correct."
@@ -413,12 +442,12 @@
                 </div>
                 
                 <div class="bg-gray-900 p-6 rounded-lg">
-                    <div class="flex text-emergency mb-4">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    <div class="flex text-yellow-400 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
                     </div>
                     <p class="text-gray-300 mb-4" data-fr="Mon camion est tombé en panne à 2h du matin. Ils étaient là rapidement!" data-en="My truck broke down at 2am. They were there quickly!">
                         "Mon camion est tombé en panne à 2h du matin. Ils étaient là rapidement!"
@@ -430,12 +459,12 @@
                 </div>
                 
                 <div class="bg-gray-900 p-6 rounded-lg">
-                    <div class="flex text-emergency mb-4">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    <div class="flex text-yellow-400 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
                     </div>
                     <p class="text-gray-300 mb-4" data-fr="Excellent service! Ils ont sorti ma voiture du fossé sans dommage." data-en="Excellent service! They got my car out of the ditch without damage.">
                         "Excellent service! Ils ont sorti ma voiture du fossé sans dommage."
@@ -447,12 +476,12 @@
                 </div>
                 
                 <div class="bg-gray-900 p-6 rounded-lg">
-                    <div class="flex text-emergency mb-4">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    <div class="flex text-yellow-400 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
                     </div>
                     <p class="text-gray-300 mb-4" data-fr="Batterie morte par -30°C. Ils m'ont fait redémarrer sur place." data-en="Dead battery at -30°C. They got me started on the spot.">
                         "Batterie morte par -30°C. Ils m'ont fait redémarrer sur place."
@@ -463,6 +492,22 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+    
+    <!-- Night Parallax Section -->
+    <section class="py-32 relative overflow-hidden" style="background-image: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.5)), url('images/photo_night.png'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-5xl font-black mb-6 text-white">
+                <span data-fr="Jour et nuit, on répond" data-en="Day and night, we respond">Jour et nuit, on répond</span>
+            </h2>
+            <p class="text-2xl text-gray-200 mb-8">
+                <span data-fr="Urgence 24/7 — Pluie, neige ou verglas" data-en="24/7 Emergency — Rain, snow or ice">Urgence 24/7 — Pluie, neige ou verglas</span>
+            </p>
+            <a href="tel:+(866) 487-99696" class="inline-block bg-emergency text-white px-8 py-4 rounded-lg text-xl font-bold pulse-red hover:bg-red-700 transition-all">
+                <i data-lucide="phone" class="inline w-5 h-5 mr-2"></i>
+                <span data-fr="Appelez maintenant" data-en="Call Now">Appelez maintenant</span>
+            </a>
         </div>
     </section>
     
@@ -549,7 +594,7 @@
                         </div>
                     </div>
                     
-                    <a href="tel:+15145557366" class="block w-full bg-emergency text-white text-center py-4 rounded-lg font-bold hover:bg-red-700 transition-all">
+                    <a href="tel:+(866) 487-99696" class="block w-full bg-emergency text-white text-center py-4 rounded-lg font-bold hover:bg-red-700 transition-all">
                         <span data-fr="Appelez pour info fourrière" data-en="Call for impound info">Appelez pour info fourrière</span>
                     </a>
                 </div>
@@ -619,8 +664,8 @@
                 <!-- Contact Info -->
                 <div class="space-y-8">
                     <div class="text-center lg:text-left">
-                        <a href="tel:+15145557366" class="inline-block bg-emergency text-white px-12 py-6 rounded-lg text-4xl font-bold pulse-red hover:bg-red-700 transition-all mb-4">
-                            (514) 555-REMO
+                        <a href="tel:+(866) 487-99696" class="inline-block bg-emergency text-white px-12 py-6 rounded-lg text-4xl font-bold pulse-red hover:bg-red-700 transition-all mb-4">
+                            (866) 487-9969
                         </a>
                         <p class="text-gray-400" data-fr="Appelez maintenant pour service immédiat" data-en="Call now for immediate service">
                             Appelez maintenant pour service immédiat
@@ -640,7 +685,7 @@
                             <i data-lucide="mail" class="w-6 h-6 text-emergency mr-4"></i>
                             <div>
                                 <h4 class="font-bold">Email</h4>
-                                <a href="mailto:info@remorquage-rm.ca" class="text-emergency hover:text-red-400">info@remorquage-rm.ca</a>
+                                <a href="mailto:info@remorquagerm.ca" class="text-emergency hover:text-red-400">info@remorquagerm.ca</a>
                             </div>
                         </div>
                         
@@ -678,17 +723,7 @@
                 </div>
             </div>
             
-            <!-- Map -->
-            <div class="mt-12">
-                <iframe 
-                    src="https://www.openstreetmap.org/export/embed.html?bbox=-73.5773%2C45.4917%2C-73.5573%2C45.5117&layer=mapnik&marker=45.5017%2C-73.5673"
-                    width="100%" 
-                    height="400" 
-                    class="rounded-lg border-2 border-emergency/20"
-                    frameborder="0"
-                    scrolling="no">
-                </iframe>
-            </div>
+
         </div>
     </section>
     
@@ -740,13 +775,13 @@
                     <h4 class="text-lg font-bold mb-4" data-fr="Contact" data-en="Contact">Contact</h4>
                     <ul class="space-y-3 text-gray-400">
                         <li>
-                            <a href="tel:+15145557366" class="text-emergency font-bold text-lg hover:text-red-400">
-                                (514) 555-REMO
+                            <a href="tel:+(866) 487-99696" class="text-emergency font-bold text-lg hover:text-red-400">
+                                (866) 487-9969
                             </a>
                         </li>
                         <li>
-                            <a href="mailto:info@remorquage-rm.ca" class="hover:text-white">
-                                info@remorquage-rm.ca
+                            <a href="mailto:info@remorquagerm.ca" class="hover:text-white">
+                                info@remorquagerm.ca
                             </a>
                         </li>
                         <li class="text-sm">
@@ -806,11 +841,11 @@
             trigger: "#services",
             start: "top center",
             onEnter: () => {
-                gsap.to(logo, { duration: 0.3, height: "2rem" });
+                gsap.to(logo, { duration: 0.3, height: "2.5rem" });
                 gsap.to(header, { duration: 0.3, padding: "0.5rem 0" });
             },
             onLeaveBack: () => {
-                gsap.to(logo, { duration: 0.3, height: "2.5rem" });
+                gsap.to(logo, { duration: 0.3, height: "4rem" });
                 gsap.to(header, { duration: 0.3, padding: "0.75rem 0" });
             }
         });
@@ -850,15 +885,65 @@
         });
         
         // Language toggle functionality
-        const langToggle = document.querySelector('.lang-toggle');
+        const langToggleNav = document.getElementById('lang-toggle-nav');
+        const langToggleMobile = document.getElementById('lang-toggle-mobile');
+        const langTextNav = document.getElementById('lang-text');
+        const langTextMobile = document.getElementById('lang-text-mobile');
         const body = document.body;
         let currentLang = 'fr';
+
+        // Translation object
+        const translations = {
+            fr: {
+                'Services': 'Services',
+                'Fleet': 'Flotte', 
+                'About': 'À propos',
+                'Contact': 'Contact',
+                'Call Now': 'Appelez maintenant',
+                'Our Services': 'Nos services',
+                'Our Fleet': 'Notre flotte',
+                'Service Area': 'Zone de service',
+                'Testimonials': 'Témoignages',
+                'Impound': 'Fourrière',
+                'Contact Us': 'Contactez-nous',
+                'Send': 'Envoyer',
+                'Name': 'Nom',
+                'Email': 'Courriel',
+                'Phone': 'Téléphone',
+                'Message': 'Message',
+                'All rights reserved': 'Tous droits réservés'
+            },
+            en: {
+                'Services': 'Services',
+                'Flotte': 'Fleet',
+                'À propos': 'About', 
+                'Contact': 'Contact',
+                'Appelez maintenant': 'Call Now',
+                'Nos services': 'Our Services',
+                'Notre flotte': 'Our Fleet',
+                'Zone de service': 'Service Area',
+                'Témoignages': 'Testimonials',
+                'Fourrière': 'Impound',
+                'Contactez-nous': 'Contact Us',
+                'Envoyer': 'Send',
+                'Nom': 'Name',
+                'Courriel': 'Email',
+                'Téléphone': 'Phone',
+                'Message': 'Message',
+                'Tous droits réservés': 'All rights reserved'
+            }
+        };
         
-        langToggle.addEventListener('click', () => {
+        function toggleLanguage() {
             currentLang = currentLang === 'fr' ? 'en' : 'fr';
             body.setAttribute('data-lang', currentLang);
             
-            // Update all text elements
+            // Update button text
+            const buttonText = currentLang === 'fr' ? 'EN' : 'FR';
+            langTextNav.textContent = buttonText;
+            langTextMobile.textContent = buttonText;
+            
+            // Update all text elements with data attributes
             document.querySelectorAll('[data-fr][data-en]').forEach(el => {
                 if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
                     el.placeholder = el.getAttribute(`data-placeholder-${currentLang}`);
@@ -866,18 +951,29 @@
                     el.textContent = el.getAttribute(`data-${currentLang}`);
                 }
             });
+
+            // Translation loop for elements without data attributes
+            const elementsToTranslate = document.querySelectorAll('h1, h2, h3, p, a, button, span');
+            elementsToTranslate.forEach(el => {
+                if (el.textContent && translations[currentLang][el.textContent.trim()]) {
+                    el.textContent = translations[currentLang][el.textContent.trim()];
+                }
+            });
             
             // Update page title and meta
             if (currentLang === 'en') {
                 document.title = "R.M. Towing Inc. - 24/7 Towing Service in Montreal | Roadside Assistance";
-                document.querySelector('meta[name="description"]').content = "24/7 towing service in Montreal and region. Roadside assistance, flatbed towing. Arrival in 30 minutes. Call now: (514) 555-REMO";
+                document.querySelector('meta[name="description"]').content = "24/7 towing service in Montreal and region. Roadside assistance, flatbed towing. Arrival in 30 minutes. Call now: (866) 487-9969";
             } else {
                 document.title = "Remorquage R.M. Inc. - Service de remorquage 24/7 à Montréal | Dépannage routier";
-                document.querySelector('meta[name="description"]').content = "Service de remorquage 24/7 à Montréal et région. Dépannage routier, assistance routière, remorquage plateau. Arrivée en 30 minutes. Appelez maintenant: (514) 555-REMO";
+                document.querySelector('meta[name="description"]').content = "Service de remorquage 24/7 à Montréal et région. Dépannage routier, assistance routière, remorquage plateau. Arrivée en 30 minutes. Appelez maintenant: (866) 487-9969";
             }
             
             document.documentElement.lang = currentLang;
-        });
+        }
+        
+        langToggleNav.addEventListener('click', toggleLanguage);
+        langToggleMobile.addEventListener('click', toggleLanguage);
         
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
