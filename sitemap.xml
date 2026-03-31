@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <!-- Main page -->
+    <url>
+        <loc>https://remorquage-rm.ca/</loc>
+        <lastmod>2024-03-30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        
+        <!-- Image entries for SEO -->
+        <image:image>
+            <image:loc>https://remorquage-rm.ca/images/logo.png</image:loc>
+            <image:title>Logo Remorquage R.M. Inc.</image:title>
+            <image:caption>Logo officiel de Remorquage R.M. Inc., service de remorquage 24/7 à Montréal</image:caption>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://remorquage-rm.ca/images/photo_hero.png</image:loc>
+            <image:title>Service de remorquage d'urgence</image:title>
+            <image:caption>Remorqueuse plateau chargeant un véhicule sur l'autoroute à l'heure dorée</image:caption>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://remorquage-rm.ca/images/photo_flatbed.png</image:loc>
+            <image:title>Remorqueuse plateau professionnelle</image:title>
+            <image:caption>Camion remorqueur plateau propre, vue 3/4, équipement professionnel</image:caption>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://remorquage-rm.ca/images/photo_night.png</image:loc>
+            <image:title>Service 24/7 hiver</image:title>
+            <image:caption>Dépanneuse sur autoroute enneigée la nuit avec gyrophares</image:caption>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://remorquage-rm.ca/images/photo_roadside.png</image:loc>
+            <image:title>Assistance routière</image:title>
+            <image:caption>Opérateur aidant un conducteur avec câbles de survoltage</image:caption>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://remorquage-rm.ca/images/photo_heavy.png</image:loc>
+            <image:title>Remorquage lourd</image:title>
+            <image:caption>Dépanneuse lourde soulevant véhicule commercial</image:caption>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://remorquage-rm.ca/images/photo_team.png</image:loc>
+            <image:title>Équipe Remorquage R.M.</image:title>
+            <image:caption>3 opérateurs professionnels devant leurs camions</image:caption>
+        </image:image>
+    </url>
+    
+    <!-- Section-specific URLs for better indexing -->
+    <url>
+        <loc>https://remorquage-rm.ca/#services</loc>
+        <lastmod>2024-03-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://remorquage-rm.ca/#fleet</loc>
+        <lastmod>2024-03-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://remorquage-rm.ca/#coverage</loc>
+        <lastmod>2024-03-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://remorquage-rm.ca/#testimonials</loc>
+        <lastmod>2024-03-30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://remorquage-rm.ca/#impound</loc>
+        <lastmod>2024-03-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://remorquage-rm.ca/#about</loc>
+        <lastmod>2024-03-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://remorquage-rm.ca/#contact</loc>
+        <lastmod>2024-03-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Service-specific entries for local SEO -->
+    <url>
+        <loc>https://remorquage-rm.ca/#remorquage-plateau</loc>
+        <lastmod>2024-03-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://remorquage-rm.ca/#remorquage-lourd</loc>
+        <lastmod>2024-03-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://remorquage-rm.ca/#assistance-routiere</loc>
+        <lastmod>2024-03-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://remorquage-rm.ca/#survoltage</loc>
+        <lastmod>2024-03-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://remorquage-rm.ca/#fourriere</loc>
+        <lastmod>2024-03-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+</urlset>

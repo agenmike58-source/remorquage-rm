@@ -1,0 +1,33 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://remorquage-rm.ca/sitemap.xml
+
+# Priority pages for crawling
+Allow: /index.html
+Allow: /images/
+Allow: /*.css
+Allow: /*.js
+
+# Block unnecessary crawling
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+Disallow: /logs/
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+# Specific instructions for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
