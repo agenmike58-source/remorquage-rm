@@ -1010,10 +1010,8 @@
             });
         });
         
-        // Initialize everything when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            initLanguageToggle();
-        });
+        // Initialize language toggle immediately (script is at bottom, DOM is ready)
+        initLanguageToggle();
     </script>
 </body>
 </html>
