@@ -4,50 +4,50 @@
     
     <!-- Main page -->
     <url>
-        <loc>https://remorquage-rm.ca/</loc>
-        <lastmod>2025-04-01</lastmod>
+        <loc>https://remorquagerm.ca/</loc>
+        <lastmod>2026-04-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         
         <!-- Image entries for SEO -->
         <image:image>
-            <image:loc>https://remorquage-rm.ca/images/logo.png</image:loc>
+            <image:loc>https://remorquagerm.ca/images/logo.png</image:loc>
             <image:title>Logo Remorquage R.M. Inc.</image:title>
             <image:caption>Logo officiel de Remorquage R.M. Inc., service de remorquage 24/7 à Montréal</image:caption>
         </image:image>
         
         <image:image>
-            <image:loc>https://remorquage-rm.ca/images/photo_hero.png</image:loc>
+            <image:loc>https://remorquagerm.ca/images/photo_hero.png</image:loc>
             <image:title>Service de remorquage d'urgence</image:title>
             <image:caption>Remorqueuse plateau chargeant un véhicule sur l'autoroute à l'heure dorée</image:caption>
         </image:image>
         
         <image:image>
-            <image:loc>https://remorquage-rm.ca/images/photo_flatbed.png</image:loc>
+            <image:loc>https://remorquagerm.ca/images/photo_flatbed.png</image:loc>
             <image:title>Remorqueuse plateau professionnelle</image:title>
             <image:caption>Camion remorqueur plateau propre, vue 3/4, équipement professionnel</image:caption>
         </image:image>
         
         <image:image>
-            <image:loc>https://remorquage-rm.ca/images/photo_night.png</image:loc>
+            <image:loc>https://remorquagerm.ca/images/photo_night.png</image:loc>
             <image:title>Service 24/7 hiver</image:title>
             <image:caption>Dépanneuse sur autoroute enneigée la nuit avec gyrophares</image:caption>
         </image:image>
         
         <image:image>
-            <image:loc>https://remorquage-rm.ca/images/photo_roadside.png</image:loc>
+            <image:loc>https://remorquagerm.ca/images/photo_roadside.png</image:loc>
             <image:title>Assistance routière</image:title>
             <image:caption>Opérateur aidant un conducteur avec câbles de survoltage</image:caption>
         </image:image>
         
         <image:image>
-            <image:loc>https://remorquage-rm.ca/images/photo_heavy.png</image:loc>
+            <image:loc>https://remorquagerm.ca/images/photo_heavy.png</image:loc>
             <image:title>Remorquage lourd</image:title>
             <image:caption>Dépanneuse lourde soulevant véhicule commercial</image:caption>
         </image:image>
         
         <image:image>
-            <image:loc>https://remorquage-rm.ca/images/photo_team.png</image:loc>
+            <image:loc>https://remorquagerm.ca/images/photo_team.png</image:loc>
             <image:title>Équipe Remorquage R.M.</image:title>
             <image:caption>3 opérateurs professionnels devant leurs camions</image:caption>
         </image:image>

@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://remorquage-rm.ca/sitemap.xml
+Sitemap: https://remorquagerm.ca/sitemap.xml
 
 # Priority pages for crawling
 Allow: /index.html
